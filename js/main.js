@@ -1,0 +1,1 @@
+const toggle=document.querySelector('.nav-toggle');const links=document.querySelector('.nav-links');if(toggle){toggle.addEventListener('click',()=>links.classList.toggle('open'))}const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
