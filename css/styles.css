@@ -257,7 +257,7 @@ h2 span{
 .brand-row{
   position:absolute;
   z-index:4;
-  bottom:42px;
+  bottom:24px;
   left:56px;
   right:56px;
   display:flex;
