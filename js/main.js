@@ -65,11 +65,19 @@ const popup = document.getElementById("offerPopup");
 const closeBtn = document.getElementById("offerClose");
 const viewPackagesBtn = document.getElementById("viewPackagesBtn");
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    popup.classList.add("show");
-  }, 1200);
-});
+const lastSeen = localStorage.getItem("metahausOfferSeen");
+const now = Date.now();
+const oneDay = 24 * 60 * 60 * 1000;
+
+if (!lastSeen || now - lastSeen > oneDay) {
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      popup.classList.add("show");
+    }, 1200);
+  });
+
+  localStorage.setItem("metahausOfferSeen", now);
+}
 
 closeBtn.addEventListener("click", () => {
   popup.classList.remove("show");
