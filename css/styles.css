@@ -610,13 +610,30 @@ h3{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:0;
+
   padding:42px 48px;
+
   border-radius:var(--radius);
+
   background:
-    linear-gradient(180deg,rgba(5,7,15,.78),rgba(5,7,15,.96)),
-    radial-gradient(circle at 70% 0%,rgba(187,34,255,.22),transparent 38%);
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
+    linear-gradient(
+      180deg,
+      rgba(14,18,38,.92) 0%,
+      rgba(6,9,22,.96) 100%
+    ),
+    radial-gradient(
+      circle at 70% 0%,
+      rgba(187,34,255,.18),
+      transparent 38%
+    );
+
+  border:1px solid rgba(120,170,255,.12);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.03),
+    0 0 40px rgba(0,180,255,.04),
+    var(--shadow);
+
   overflow:hidden;
 }
 
