@@ -760,6 +760,8 @@ h3{
     );
 }
 
+
+
 .booking-card:hover{
   transform:translateY(-4px);
   border-color:rgba(47,220,255,.45);
