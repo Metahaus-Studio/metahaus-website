@@ -408,6 +408,10 @@ h3{
   filter:saturate(1.05) contrast(1.05);
 }
 
+.image-grid a:nth-child(3) .thumb-img{
+  object-position:center 2%;
+}
+
 .image-grid article:hover .thumb-img{
   transform:scale(1.03);
   filter:brightness(1.08);
@@ -428,7 +432,7 @@ h3{
 }
 
 #collections .project-card:nth-child(3) .project-img{
-  object-position:left center;
+  object-position:center 78%;
 }
 
 .project-img{
@@ -970,6 +974,8 @@ h3{
     width:100%;
     margin:0;
   }
+
+  
 
   .nav{
     border-radius:0;
