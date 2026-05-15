@@ -61,16 +61,20 @@ document.querySelectorAll('.nav-links a').forEach(link => {
    SMOOTH BUTTON HOVER GLOW
 ========================= */
 
-const buttons = document.querySelectorAll('.btn');
+const popup = document.getElementById("offerPopup");
+const closeBtn = document.getElementById("offerClose");
+const viewPackagesBtn = document.getElementById("viewPackagesBtn");
 
-buttons.forEach((btn) => {
-  btn.addEventListener('mousemove', (e) => {
-    const rect = btn.getBoundingClientRect();
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    popup.classList.add("show");
+  }, 1200);
+});
 
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+closeBtn.addEventListener("click", () => {
+  popup.classList.remove("show");
+});
 
-    btn.style.setProperty('--x', `${x}px`);
-    btn.style.setProperty('--y', `${y}px`);
-  });
+viewPackagesBtn.addEventListener("click", () => {
+  popup.classList.remove("show");
 });

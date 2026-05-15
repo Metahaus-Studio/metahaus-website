@@ -305,6 +305,16 @@ h2{
   z-index:2;
 }
 
+.service-card strong{
+  display:block;
+  margin-top:18px;
+  color:var(--cyan);
+  font-size:18px;
+  font-weight:900;
+  text-transform:uppercase;
+  text-shadow:0 0 14px rgba(47,220,255,.45);
+}
+
 .service-card,
 .project-card,
 .image-grid article,
@@ -806,6 +816,153 @@ h3{
   margin-top:0;
 }
 
+/* =========================
+   LIMITED OFFER SECTION
+========================= */
+
+#launch-offers{
+  position:relative;
+  border-color:rgba(47,220,255,.35);
+  box-shadow:
+    0 0 38px rgba(47,220,255,.10),
+    0 0 60px rgba(187,34,255,.10),
+    var(--shadow);
+}
+
+#launch-offers::before{
+  content:"LIMITED OFFER";
+  position:absolute;
+  top:-14px;
+  right:34px;
+  padding:8px 16px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+  color:white;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  box-shadow:0 0 26px rgba(240,6,214,.45);
+}
+
+#launch-offers .service-card{
+  border-color:rgba(47,220,255,.28);
+  box-shadow:
+    0 0 22px rgba(47,220,255,.08),
+    inset 0 0 18px rgba(187,34,255,.05);
+  animation:offerPulse 3.8s ease-in-out infinite;
+}
+
+#launch-offers .category-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+#launch-offers .service-card:last-child{
+  grid-column:2 / 3;
+  transform:scale(1.03);
+}
+
+#launch-offers .service-card:last-child:hover{
+  transform:translateY(-5px) scale(1.04);
+}
+
+#launch-offers .service-card:hover{
+  border-color:rgba(240,6,214,.75);
+  box-shadow:
+    0 0 34px rgba(240,6,214,.24),
+    inset 0 0 24px rgba(47,220,255,.08);
+}
+
+@keyframes offerPulse{
+  0%,100%{
+    box-shadow:
+      0 0 18px rgba(47,220,255,.08),
+      inset 0 0 18px rgba(187,34,255,.05);
+  }
+
+  50%{
+    box-shadow:
+      0 0 30px rgba(240,6,214,.18),
+      inset 0 0 22px rgba(47,220,255,.08);
+  }
+}
+
+.deal-badge{
+  display:inline-block;
+  margin-bottom:16px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+  color:white !important;
+  font-size:11px !important;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.deal-badge{
+  transition:.3s ease;
+}
+
+.service-card:hover .deal-badge{
+  transform:translateY(-2px) scale(1.04);
+  box-shadow:0 0 20px rgba(240,6,214,.4);
+}
+
+.offer-list{
+  margin:14px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* =========================
+   POPUP OFFER
+========================= */
+
+.offer-popup{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(2,4,10,.72);
+  backdrop-filter:blur(16px);
+}
+
+.offer-popup.show{
+  display:flex;
+}
+
+.offer-popup-card{
+  position:relative;
+  max-width:620px;
+  padding:38px;
+  border-radius:28px;
+  background:linear-gradient(180deg,rgba(12,20,36,.98),rgba(7,12,24,.98));
+  border:1px solid rgba(47,220,255,.35);
+  box-shadow:
+    0 0 50px rgba(187,34,255,.24),
+    0 0 90px rgba(47,220,255,.14);
+}
+
+.offer-close{
+  position:absolute;
+  top:16px;
+  right:18px;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+}
+
 /* MOBILE */
 
 @media(max-width:900px){
@@ -880,8 +1037,8 @@ h3{
   }
 
   .booking-steps{
-  grid-template-columns:1fr;
-}
+    grid-template-columns:1fr;
+  }
 
   .brand-row{
     position:static;
@@ -895,6 +1052,25 @@ h3{
   .category-grid,
   .footer{
     grid-template-columns:1fr;
+  }
+
+  #collections .project-grid{
+    grid-template-columns:1fr;
+    max-width:none;
+  }
+
+  #collections .project-card{
+    width:100%;
+  }
+
+  #collections .project-img,
+  .project-img,
+  .thumb-img{
+    height:300px;
+    object-fit:contain;
+    object-position:center;
+    background:#070b15;
+    padding:14px;
   }
 
   .process-grid,
@@ -911,5 +1087,16 @@ h3{
     flex-direction:column;
   }
 
-  
+  .offer-popup-card{
+    padding:28px;
+  }
+
+  .offer-popup-card h2{
+    font-size:34px;
+  }
+
+  .whatsapp-float{
+    right:18px;
+    bottom:18px;
+  }
 }
