@@ -37,21 +37,25 @@ Use these definitions consistently:
 
 GrabMe is a MetaHaus client and partner engagement. It is not owned by MetaHaus and must appear only under Selected Work / Partnerships.
 
-Commerce Engine and Immersive Experience Systems are represented as MetaHaus-owned reusable capabilities, not standalone public products.
+Commerce Engine remains a MetaHaus-owned reusable capability. MetaHaus Immersive is a product built on the MetaHaus Spatial Runtime; spatial design and integration also remain capabilities MetaHaus can bring to custom work.
 
 ## Product status configuration
 
 The public maturity order is:
 
-1. MetaHaus OS — `Managed Founding Access`
+1. MetaHaus OS — `Private Access`
 2. MetaHaus Immersive — `Project Access`
 3. MetaHaus Cloud — `In Development`
 4. MetaHaus AI — `In Development`
 5. MetaHaus Furniture — `Project Access`, commercial and project-based
 
-[`meta/platform-status.json`](meta/platform-status.json) is the website-level authority for public product status, maturity order, commercial availability and approved public pricing. Because the site is intentionally build-free, visible copy remains authored in `index.html`; every product-status or commercial change must update both files in the same reviewed change.
+[`meta/platform-status.json`](meta/platform-status.json) is the website-level authority for public product status, maturity order and commercial availability. Because the site is intentionally build-free, visible copy remains authored in `index.html`; every product-status or commercial change must update both files in the same reviewed change.
 
-MetaHaus OS Managed Founding Access is the only approved public priced offer. It is controlled, operator-managed and sold manually, with no self-service checkout. Do not expose inactive catalogue prices, future editions, public signup or subscription language as active offers.
+MetaHaus Studio is currently the primary client acquisition and revenue layer. Active Studio clients use MetaHaus OS as an integrated part of the delivery relationship and do not pay a separate OS subscription during that engagement. After handover, a client may later choose to continue its OS environment through a future paid subscription; this is optional and does not automatically convert the client into a subscriber. Direct OS onboarding and subscription sales are not publicly available.
+
+The commercial progression is Studio → OS → AI, automation and additional capabilities → broader platform access over time. Reusable operating patterns may become governed capabilities distributed through MetaHaus Cloud. MetaHaus Immersive remains the spatial experience platform.
+
+No OS or Cloud subscription catalogue is approved for public display. Future OS tiers should correspond to actual usage, capabilities, users, workspaces, automation and service level—not company size alone. Do not store unpublished commercial pricing in public website assets.
 
 ## Local preview on Windows
 

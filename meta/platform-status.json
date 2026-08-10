@@ -1,45 +1,33 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1",
   "lastUpdated": "2026-08-10",
-  "currency": "USD",
   "products": [
     {
       "id": "metahaus-os",
       "name": "MetaHaus OS",
-      "status": "Managed Founding Access",
+      "status": "private-access",
+      "statusLabel": "Private Access",
       "maturityOrder": 1,
       "positioningLine": "Run the business.",
       "publicSummary": "The connected operating system for organizations, commercial workflows, client operations, delivery and executive visibility.",
       "commercialAvailability": {
-        "model": "controlled-managed-access",
-        "publicOffer": true,
-        "operatorManagedOnboarding": true,
-        "manualSale": true,
+        "model": "studio-client-engagement",
+        "summary": "Studio-client access during active engagements",
+        "publicOffer": false,
+        "includedWithActiveStudioEngagement": true,
+        "separateOsSubscriptionDuringActiveEngagement": false,
+        "directOsOnboardingPublic": false,
         "selfServiceCheckout": false
       },
-      "approvedPublicPricing": {
-        "setup": 2500,
-        "monthly": 750,
-        "annual": 7500,
-        "includes": {
-          "organizations": 1,
-          "primaryWorkspaces": 1,
-          "users": 5
-        },
-        "addOns": {
-          "additionalUserMonthly": 25,
-          "additionalWorkspaceMonthly": 150
-        },
-        "minimumCommitmentMonths": 6,
-        "foundingPriceProtectionMonths": 12
-      },
-      "futurePlannedStatus": "Wider editions and self-service access are not active public offers.",
+      "approvedPublicPricing": null,
+      "futurePlannedStatus": "Optional post-handover subscriptions and direct MetaHaus OS subscriptions are planned but not publicly available.",
       "lastUpdated": "2026-08-10"
     },
     {
       "id": "metahaus-immersive",
       "name": "MetaHaus Immersive",
-      "status": "Project Access",
+      "status": "project-access",
+      "statusLabel": "Project Access",
       "maturityOrder": 2,
       "positioningLine": "Experience the business in space.",
       "publicSummary": "Custom spatial environments and experiences built on the MetaHaus Spatial Runtime, including galleries, exhibitions, product experiences and virtual walkthroughs.",
@@ -55,7 +43,8 @@
     {
       "id": "metahaus-cloud",
       "name": "MetaHaus Cloud",
-      "status": "In Development",
+      "status": "in-development",
+      "statusLabel": "In Development",
       "maturityOrder": 3,
       "positioningLine": "Build and distribute the operating system.",
       "publicSummary": "The governed composition and distribution layer for engines, manifests, versions, packs and organization-specific capabilities.",
@@ -71,7 +60,8 @@
     {
       "id": "metahaus-ai",
       "name": "MetaHaus AI",
-      "status": "In Development",
+      "status": "in-development",
+      "statusLabel": "In Development",
       "maturityOrder": 4,
       "positioningLine": "Intelligence grounded in real operating context.",
       "publicSummary": "AI workspaces, reusable intelligence and automation designed around real work and operating contexts.",
@@ -87,7 +77,8 @@
     {
       "id": "metahaus-furniture",
       "name": "MetaHaus Furniture",
-      "status": "Project Access",
+      "status": "project-access",
+      "statusLabel": "Project Access",
       "maturityOrder": 5,
       "positioningLine": "Commercial Furniture & Spatial Systems.",
       "publicSummary": "Commercial furniture, materials, spatial visualization and project partnerships for hospitality, development and architecture.",
