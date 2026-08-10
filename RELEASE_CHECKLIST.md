@@ -4,10 +4,18 @@ Complete this checklist against a local HTTP preview and again against the produ
 
 ## Launch approvals
 
-- [ ] MetaHaus OS status confirmed as `Private Access`
-- [ ] MetaHaus AI Workspace status confirmed as `Private Access`
-- [ ] MetaHaus Furniture project-based wording approved
+- [ ] Product order is OS, Immersive, Cloud, AI, Furniture in both the homepage and `meta/platform-status.json`
+- [ ] MetaHaus OS status confirmed as `Managed Founding Access`
+- [ ] MetaHaus Immersive status confirmed as `Project Access`
+- [ ] MetaHaus Cloud and MetaHaus AI statuses confirmed as `In Development`
+- [ ] MetaHaus Furniture status and project-based commercial wording approved
+- [ ] Homepage status, availability and pricing copy matches `meta/platform-status.json`
+- [ ] Only the ratified MetaHaus OS founding offer has public pricing
+- [ ] No inactive edition, Cloud tier or future price appears purchasable
+- [ ] The OS CTA is an application/contact action; there is no checkout
+- [ ] Database recovery language remains database-only and describes RPO/RTO values as targets, not guarantees
 - [ ] GrabMe partnership wording approved
+- [ ] GrabMe remains only under Selected Work / Partnerships and is identified as client-owned
 - [ ] `PORTAL_URL` either configured with the approved HTTPS URL or intentionally left in private-access notice mode
 - [ ] Dedicated 1200×630 MetaHaus Open Graph image approved and added
 - [ ] Legacy URL redirect or replacement plan approved
@@ -55,6 +63,7 @@ At every width:
 - [ ] Active navigation follows the visible section without flicker
 - [ ] Magnetic portal movement does not move the click target excessively
 - [ ] Product lighting follows the pointer without jitter
+- [ ] Five-product maturity order remains visually clear and status labels remain readable
 - [ ] OS interface motion starts when visible and stops off-screen
 - [ ] Capability and World focus states match their hover states
 - [ ] GrabMe motion reads as a client partnership, not a MetaHaus-owned product
@@ -101,6 +110,7 @@ Reload with DevTools open.
 - [ ] Console contains no errors or uncaught promise rejections
 - [ ] No 404 responses for CSS, JavaScript, favicon or homepage imagery
 - [ ] No third-party script, font or tracking request appears unexpectedly
+- [ ] `meta/platform-status.json` returns HTTP 200 and parses as valid JSON
 - [ ] `index.html`, CSS and JavaScript return HTTP 200
 - [ ] Furniture imagery is lazy-loaded and does not block first paint
 - [ ] Switching tabs pauses continuous motion and returning resumes it calmly

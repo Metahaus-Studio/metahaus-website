@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0",
+  "lastUpdated": "2026-08-10",
+  "currency": "USD",
+  "products": [
+    {
+      "id": "metahaus-os",
+      "name": "MetaHaus OS",
+      "status": "Managed Founding Access",
+      "maturityOrder": 1,
+      "positioningLine": "Run the business.",
+      "publicSummary": "The connected operating system for organizations, commercial workflows, client operations, delivery and executive visibility.",
+      "commercialAvailability": {
+        "model": "controlled-managed-access",
+        "publicOffer": true,
+        "operatorManagedOnboarding": true,
+        "manualSale": true,
+        "selfServiceCheckout": false
+      },
+      "approvedPublicPricing": {
+        "setup": 2500,
+        "monthly": 750,
+        "annual": 7500,
+        "includes": {
+          "organizations": 1,
+          "primaryWorkspaces": 1,
+          "users": 5
+        },
+        "addOns": {
+          "additionalUserMonthly": 25,
+          "additionalWorkspaceMonthly": 150
+        },
+        "minimumCommitmentMonths": 6,
+        "foundingPriceProtectionMonths": 12
+      },
+      "futurePlannedStatus": "Wider editions and self-service access are not active public offers.",
+      "lastUpdated": "2026-08-10"
+    },
+    {
+      "id": "metahaus-immersive",
+      "name": "MetaHaus Immersive",
+      "status": "Project Access",
+      "maturityOrder": 2,
+      "positioningLine": "Experience the business in space.",
+      "publicSummary": "Custom spatial environments and experiences built on the MetaHaus Spatial Runtime, including galleries, exhibitions, product experiences and virtual walkthroughs.",
+      "commercialAvailability": {
+        "model": "custom-project",
+        "publicOffer": false,
+        "selfServiceCheckout": false
+      },
+      "approvedPublicPricing": null,
+      "futurePlannedStatus": "Commerce integrations, AR and WebXR remain later platform phases.",
+      "lastUpdated": "2026-08-10"
+    },
+    {
+      "id": "metahaus-cloud",
+      "name": "MetaHaus Cloud",
+      "status": "In Development",
+      "maturityOrder": 3,
+      "positioningLine": "Build and distribute the operating system.",
+      "publicSummary": "The governed composition and distribution layer for engines, manifests, versions, packs and organization-specific capabilities.",
+      "commercialAvailability": {
+        "model": "not-commercially-launched",
+        "publicOffer": false,
+        "selfServiceCheckout": false
+      },
+      "approvedPublicPricing": null,
+      "futurePlannedStatus": "Licensing, Marketplace, enterprise deployment and a developer platform are planned for later phases.",
+      "lastUpdated": "2026-08-10"
+    },
+    {
+      "id": "metahaus-ai",
+      "name": "MetaHaus AI",
+      "status": "In Development",
+      "maturityOrder": 4,
+      "positioningLine": "Intelligence grounded in real operating context.",
+      "publicSummary": "AI workspaces, reusable intelligence and automation designed around real work and operating contexts.",
+      "commercialAvailability": {
+        "model": "not-commercially-launched",
+        "publicOffer": false,
+        "selfServiceCheckout": false
+      },
+      "approvedPublicPricing": null,
+      "futurePlannedStatus": "General product access and subscription terms are not announced.",
+      "lastUpdated": "2026-08-10"
+    },
+    {
+      "id": "metahaus-furniture",
+      "name": "MetaHaus Furniture",
+      "status": "Project Access",
+      "maturityOrder": 5,
+      "positioningLine": "Commercial Furniture & Spatial Systems.",
+      "publicSummary": "Commercial furniture, materials, spatial visualization and project partnerships for hospitality, development and architecture.",
+      "commercialAvailability": {
+        "model": "commercial-project",
+        "publicOffer": false,
+        "consumerRetail": false,
+        "selfServiceCheckout": false
+      },
+      "approvedPublicPricing": null,
+      "futurePlannedStatus": "Trade Portal is Coming Soon; no public launch date or consumer checkout is announced.",
+      "lastUpdated": "2026-08-10"
+    }
+  ]
+}

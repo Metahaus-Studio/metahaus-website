@@ -18,6 +18,7 @@ css/styles.css          Tokens, components, responsive rules, motion and legacy 
 js/main.js              Navigation, portal state, accessibility and motion behavior
 scripts/serve.mjs       Dependency-free local preview server
 assets/images/          Existing image library
+meta/platform-status.json Public product status and approved commercial truth
 404.html                GitHub Pages not-found experience
 robots.txt              Crawler guidance
 sitemap.xml             Approved public sitemap
@@ -40,15 +41,17 @@ Commerce Engine and Immersive Experience Systems are represented as MetaHaus-own
 
 ## Product status configuration
 
-Current public treatments:
+The public maturity order is:
 
-- MetaHaus OS — `Private Access`
-- MetaHaus AI Workspace — `Private Access`
-- MetaHaus Furniture — commercial, hospitality, architectural and project-based access; not public consumer availability
+1. MetaHaus OS — `Managed Founding Access`
+2. MetaHaus Immersive — `Project Access`
+3. MetaHaus Cloud — `In Development`
+4. MetaHaus AI — `In Development`
+5. MetaHaus Furniture — `Project Access`, commercial and project-based
 
-Because the site is intentionally build-free, these labels live in `index.html`. Before changing one, update every occurrence and re-run the ownership and availability checks. Search for `status-private` and `access-context` to locate the current labels.
+[`meta/platform-status.json`](meta/platform-status.json) is the website-level authority for public product status, maturity order, commercial availability and approved public pricing. Because the site is intentionally build-free, visible copy remains authored in `index.html`; every product-status or commercial change must update both files in the same reviewed change.
 
-Do not add `Available`, pricing, public signup or subscription language without factual approval.
+MetaHaus OS Managed Founding Access is the only approved public priced offer. It is controlled, operator-managed and sold manually, with no self-service checkout. Do not expose inactive catalogue prices, future editions, public signup or subscription language as active offers.
 
 ## Local preview on Windows
 
