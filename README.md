@@ -57,6 +57,27 @@ The commercial progression is Studio → OS → AI, automation and additional ca
 
 No OS or Cloud subscription catalogue is approved for public display. Future OS tiers should correspond to actual usage, capabilities, users, workspaces, automation and service level—not company size alone. Do not store unpublished commercial pricing in public website assets.
 
+## Product preview truth
+
+Release 2026.3 adds restrained, capture-based proof surfaces for MetaHaus OS, MetaHaus Immersive and MetaHaus Cloud. The homepage presents one dominant proof surface per eligible product; dedicated static preview destinations provide the deeper evidence gallery.
+
+The site has no routing framework or deployment rewrite configuration, so the preview destinations use file-based URLs that work with the existing static host:
+
+- MetaHaus OS: `preview-os.html`
+- MetaHaus Cloud: `preview-cloud.html`
+- MetaHaus Immersive: `preview-immersive.html`
+
+- MetaHaus OS uses four manually approved interface captures covering Organization Home, Workspace Overview, Workflow & Delivery, and Identity & Persistence. The captures contain only the approved MetaHaus-owned demonstration identity: MetaHaus Demo Company, MetaHaus Operator, MetaHaus Demo Workspace and Northstar Product Launch. No interface content is cropped, altered or reconstructed.
+- MetaHaus Immersive uses three original rights-safe artwork surfaces from the verified Gallery proving experience in `metahaus-immersive`. The website frame is a presentation of real Gallery source material, not a fabricated runtime screenshot or a claim that future AR, WebXR or commerce phases are available.
+- MetaHaus Cloud uses manually approved platform-development captures showing the Engine Launcher and Workspace Composition surfaces. They demonstrate reusable operating capabilities and contextual module composition while explicitly making no claim of standalone Cloud availability, provider connection, runtime activation or commercial availability.
+- MetaHaus AI and MetaHaus Furniture intentionally have no 2026.3 preview surface.
+
+The authoritative public preview assets are the manually approved captures at `assets/images/previews/metahaus-os-organization-home.png`, `metahaus-os-workspace-overview.png`, `metahaus-os-workflow-engine.png`, `metahaus-os-persistence-center.png`, `metahaus-cloud-engine-registry.png`, `metahaus-cloud-engine-packs.png` and the three approved Gallery SVGs. They are presented without cropping or pixel reinterpretation, using responsive containment at their source aspect ratios. New interface imagery must be captured from real product surfaces and reviewed for customer names, workspace data, financial values, provider states and credentials before publication.
+
+Preview status and source paths are recorded in `meta/platform-status.json`. A preview must never change commercial status, availability or product maturity.
+
+The current public architecture is **Product Preview → controlled, capture-based product evidence**. It does not connect the public website to MetaHaus OS, MetaHaus Cloud, localhost, an authenticated deployment or a public demo environment. A future **Public Sandbox / Live Demo** requires deliberately isolated demonstration data, explicit read-only behavior, production-safe authentication and isolation, and an independently supported deployment before it can be linked publicly.
+
 ## Local preview on Windows
 
 ### Built-in Node.js preview
