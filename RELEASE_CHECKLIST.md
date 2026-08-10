@@ -5,14 +5,17 @@ Complete this checklist against a local HTTP preview and again against the produ
 ## Launch approvals
 
 - [ ] Product order is OS, Immersive, Cloud, AI, Furniture in both the homepage and `meta/platform-status.json`
-- [ ] MetaHaus OS status confirmed as `Managed Founding Access`
+- [ ] MetaHaus OS status confirmed as `Private Access`
 - [ ] MetaHaus Immersive status confirmed as `Project Access`
 - [ ] MetaHaus Cloud and MetaHaus AI statuses confirmed as `In Development`
 - [ ] MetaHaus Furniture status and project-based commercial wording approved
-- [ ] Homepage status, availability and pricing copy matches `meta/platform-status.json`
-- [ ] Only the ratified MetaHaus OS founding offer has public pricing
-- [ ] No inactive edition, Cloud tier or future price appears purchasable
-- [ ] The OS CTA is an application/contact action; there is no checkout
+- [ ] Homepage status and availability copy matches `meta/platform-status.json`
+- [ ] Active Studio-client OS access is described as integrated into the delivery relationship, not as a separate subscription or “free OS”
+- [ ] Post-handover OS access is described as an optional future paid subscription choice
+- [ ] No client is described as automatically becoming a paying subscriber
+- [ ] Direct OS onboarding and subscription sales are not presented as publicly available
+- [ ] No OS price, inactive edition, Cloud tier or future price appears publicly or as purchasable
+- [ ] The OS CTA follows the Studio/contact pathway; there is no checkout
 - [ ] Database recovery language remains database-only and describes RPO/RTO values as targets, not guarantees
 - [ ] GrabMe partnership wording approved
 - [ ] GrabMe remains only under Selected Work / Partnerships and is identified as client-owned
