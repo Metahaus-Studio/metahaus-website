@@ -16,6 +16,18 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] Direct OS onboarding and subscription sales are not presented as publicly available
 - [ ] No OS price, inactive edition, Cloud tier or future price appears publicly or as purchasable
 - [ ] The OS CTA follows the Studio/contact pathway; there is no checkout
+- [ ] MetaHaus OS, MetaHaus Immersive and MetaHaus Cloud are the only products with 2026.3 preview surfaces
+- [ ] The OS preview uses only the four manually approved captures and approved sanitized demonstration identities
+- [ ] The Immersive preview uses only approved Gallery proving-experience source assets
+- [ ] The Immersive preview does not present AR, WebXR or commerce integration as currently available
+- [ ] The Cloud preview uses only the two manually approved Engine Launcher and Workspace Composition captures
+- [ ] The Cloud preview does not imply runtime activation, installation, assignment, commercial availability or launch readiness
+- [ ] AI and Furniture do not display product previews
+- [ ] Homepage preview links resolve to `preview-os.html`, `preview-immersive.html` and `preview-cloud.html`
+- [ ] Every preview destination returns HTTP 200 and its Back to MetaHaus link returns to the correct homepage product context
+- [ ] Preview destinations remain capture-based and do not iframe, expose or link directly to development applications
+- [ ] OS and Cloud captures retain their natural aspect ratios without meaningful interface cropping
+- [ ] The Immersive destination explicitly identifies the approved-source limitation and does not present its artwork composition as a runtime screenshot
 - [ ] Database recovery language remains database-only and describes RPO/RTO values as targets, not guarantees
 - [ ] GrabMe partnership wording approved
 - [ ] GrabMe remains only under Selected Work / Partnerships and is identified as client-owned
@@ -57,6 +69,9 @@ At every width:
 - [ ] Buttons and menu items remain at least 44px in their interactive dimension
 - [ ] No image distortion or unintended consumer-commerce treatment appears
 - [ ] Footer content remains readable without overflow
+- [ ] Homepage and all three preview destinations have zero page-level horizontal overflow
+- [ ] Product proof remains full-width within its content container on mobile
+- [ ] Primary product captures are not distorted, destructively cropped or upscaled beyond their source width
 
 ## Chrome desktop interaction review
 
@@ -67,6 +82,8 @@ At every width:
 - [ ] Magnetic portal movement does not move the click target excessively
 - [ ] Product lighting follows the pointer without jitter
 - [ ] Five-product maturity order remains visually clear and status labels remain readable
+- [ ] Homepage preview CTAs and all Back to MetaHaus controls are keyboard- and touch-operable links
+- [ ] Preview labels, artwork and captions remain readable without clipping
 - [ ] OS interface motion starts when visible and stops off-screen
 - [ ] Capability and World focus states match their hover states
 - [ ] GrabMe motion reads as a client partnership, not a MetaHaus-owned product
@@ -114,6 +131,7 @@ Reload with DevTools open.
 - [ ] No 404 responses for CSS, JavaScript, favicon or homepage imagery
 - [ ] No third-party script, font or tracking request appears unexpectedly
 - [ ] `meta/platform-status.json` returns HTTP 200 and parses as valid JSON
+- [ ] All three Gallery preview SVG assets return HTTP 200
 - [ ] `index.html`, CSS and JavaScript return HTTP 200
 - [ ] Furniture imagery is lazy-loaded and does not block first paint
 - [ ] Switching tabs pauses continuous motion and returning resumes it calmly
