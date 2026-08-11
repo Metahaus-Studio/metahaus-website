@@ -79,9 +79,11 @@ demo: {
 }
 ```
 
-While disabled, Demo CTAs remain inert `<template>` content and no live-demo anchor, placeholder, localhost URL or dead production URL is rendered. Static product-proof and Work with MetaHaus links remain ordinary HTML navigation.
+While disabled, Demo CTAs remain inert `<template>` content and no live-demo anchor, placeholder, localhost URL or dead production URL is rendered. Static product-proof and commercial links remain ordinary HTML navigation.
 
-After deployment approval, verify the production Demo root and all three product routes first, then change only `enabled: false` to `enabled: true` in `js/public-experience-config.js`. The enhancement script will activate the global and product-specific Demo CTAs using the configured HTTPS base URL. Re-run the complete release checklist before publishing Studio.
+After deployment approval, verify the production Demo root and all three product routes first, then change only `enabled: false` to `enabled: true` in `js/public-experience-config.js`. The enhancement script will activate the configured product-specific Demo CTAs using the HTTPS base URL. Re-run the complete release checklist before publishing Studio.
+
+Homepage product cards own the Proof, Demo and commercial action model. Only products with an approved route and an authored Demo CTA template participate. MetaHaus AI and MetaHaus Furniture intentionally have no Demo route or CTA today; either can join later by adding an approved central route and card action without changing the homepage structure or inventing a URL in advance.
 
 ## Product proof truth
 

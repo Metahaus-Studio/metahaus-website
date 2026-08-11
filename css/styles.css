@@ -166,7 +166,6 @@ h3 {
 .section-heading h2,
 .definition-copy h2,
 .company-copy h2,
-.access-panel h2,
 .portal-panel h2,
 .contact-panel h2 {
   max-width: 18ch;
@@ -1858,17 +1857,29 @@ h3 {
 }
 
 /* 2026.5 homepage product portfolio: typographic proof gateways, not screenshots. */
-.product-grid-five .product-card {
-  min-height: 22rem;
+.product-grid-five .product-card:not(.product-card-commercial) {
+  min-height: 18.5rem;
 }
 
 .product-grid-five .card-topline {
-  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.product-grid-five .product-family {
+  margin-top: 0;
 }
 
 .product-grid-five .product-proof-actions {
   margin-top: auto;
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
+}
+
+.product-grid-five .product-proof-actions .card-link {
+  margin-top: 0;
+}
+
+.product-grid-five .card-link-demo {
+  color: var(--color-violet-bright);
 }
 
 .product-grid-five .large-copy {
@@ -1877,67 +1888,13 @@ h3 {
   font-size: clamp(1.05rem, 1.6vw, 1.35rem);
 }
 
-.demo-introduction {
-  display: grid;
-  grid-template-columns: minmax(12rem, 0.65fr) minmax(0, 1.35fr);
-  gap: 2rem;
-  align-items: end;
-  margin-top: 1rem;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.015);
-}
-
-.demo-introduction .eyebrow {
-  margin-bottom: 0.65rem;
-}
-
-.demo-introduction h3 {
-  margin: 0;
-  font-size: clamp(1.75rem, 3vw, 3rem);
-  font-weight: 540;
-}
-
-.demo-introduction p {
-  max-width: 42rem;
-  margin: 0;
+.portfolio-access-note {
+  max-width: 44rem;
+  margin: 1.25rem 0 0;
   color: var(--color-muted);
-}
-
-.demo-introduction .text-link {
-  display: inline-flex;
-  margin-top: 1.25rem;
-}
-
-.product-access-list {
-  display: grid;
-  margin: 0 0 1.5rem;
-  border-top: 1px solid var(--color-line);
-}
-
-.product-access-list div {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--color-line);
-}
-
-.product-access-list dt,
-.product-access-list dd {
-  margin: 0;
-}
-
-.product-access-list dt {
-  color: var(--color-text);
-}
-
-.product-access-list dd {
-  color: var(--color-violet-bright);
   font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -2475,40 +2432,6 @@ h3 {
   max-width: 38rem;
   margin-bottom: 0;
   color: #545b67;
-}
-
-.section-access {
-  padding-bottom: 0;
-}
-
-.access-panel {
-  display: grid;
-  grid-template-columns: minmax(17rem, 0.8fr) minmax(20rem, 1.2fr);
-  gap: clamp(3rem, 8vw, 8rem);
-  padding-block: clamp(3rem, 7vw, 6rem);
-  border-top: 1px solid var(--color-line);
-  border-bottom: 1px solid var(--color-line);
-}
-
-.access-panel h2 {
-  max-width: 11ch;
-}
-
-.access-panel > div:last-child > p:not(.large-copy) {
-  max-width: 42rem;
-  color: var(--color-muted);
-}
-
-.access-note {
-  display: inline-block;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-line);
-  color: var(--color-violet-bright);
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 /* Portal */
@@ -3551,11 +3474,6 @@ body:not(.home-page) {
     gap: 3rem;
   }
 
-  .demo-introduction {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
-
   .platform-distinction {
     grid-template-columns: 1fr;
   }
@@ -3585,8 +3503,7 @@ body:not(.home-page) {
   .section-heading,
   .definition-grid,
   .company-grid,
-  .engagement-layout,
-  .access-panel {
+  .engagement-layout {
     grid-template-columns: 1fr;
   }
 
@@ -3680,16 +3597,11 @@ body:not(.home-page) {
   .product-card-featured { grid-column: span 12; }
   .product-card-half { grid-column: span 12; }
   .product-card,
-  .product-grid-five .product-card { min-height: 0; }
+  .product-grid-five .product-card,
+  .product-grid-five .product-card:not(.product-card-commercial) { min-height: 0; }
 
   .product-grid-five .card-topline {
     margin-bottom: 2.5rem;
-  }
-
-  .product-access-list div {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.35rem;
   }
 
   .preview-frame-topline {

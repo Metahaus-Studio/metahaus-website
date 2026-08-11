@@ -20,7 +20,8 @@
         "cloud": "/cloud",
         "immersive": "/immersive"
       },
-      "immersiveRuntimeFutureHandoff": "https://immersive.demo.metahaus.studio/"
+      "immersiveRuntimeFutureHandoff": "https://immersive.demo.metahaus.studio/",
+      "futureParticipationPolicy": "MetaHaus AI and MetaHaus Furniture may receive Demo actions only after a controlled experience and central route are approved."
     },
     "proofPages": {
       "os": "preview-os.html",
@@ -34,6 +35,13 @@
       "dedicatedProofPagesRetainApprovedEvidence": true,
       "demoOwnsLiveInteractiveExperience": true,
       "selectedWorkMayRetainApprovedClientOrProjectVisuals": true
+    },
+    "homepageActionModel": {
+      "proof": "static product evidence",
+      "demo": "live controlled product environment when centrally enabled",
+      "commercial": "product-appropriate engagement",
+      "standaloneDemoSection": false,
+      "standaloneProductAccessSection": false
     }
   },
   "products": [
@@ -79,6 +87,7 @@
       "statusLabel": "In Development",
       "publicSummary": "AI workspaces, reusable intelligence and automation designed around real operating context.",
       "demoRoute": null,
+      "futureDemoEligible": true,
       "approvedPublicPricing": null
     },
     {
@@ -88,6 +97,7 @@
       "status": "project-access",
       "statusLabel": "Project Access",
       "demoRoute": null,
+      "futureDemoEligible": true,
       "approvedPublicPricing": null
     }
   ],

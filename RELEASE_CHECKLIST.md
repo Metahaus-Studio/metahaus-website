@@ -28,11 +28,13 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] The Cloud preview does not imply runtime activation, installation, assignment, commercial availability or launch readiness
 - [ ] AI and Furniture do not display product previews
 - [ ] Homepage preview links resolve to `preview-os.html`, `preview-immersive.html` and `preview-cloud.html`
-- [ ] Proof CTA language uses Explore/Inspect, Live Demo language uses Launch/Enter, and Work with MetaHaus remains commercial conversion
+- [ ] Product cards use Explore [Product] Proof, Enter/Explore [Product] Demo, Work with MetaHaus and Build an Experience consistently
+- [ ] Homepage has no standalone Demo explanation or large Product Access section
+- [ ] AI and Furniture render no Demo CTA until an approved central route exists
 - [ ] `js/public-experience-config.js` keeps Demo disabled until deployment approval
 - [ ] Disabled Demo configuration renders no live-demo anchors or empty layout placeholders
 - [ ] No public page contains a localhost or `127.0.0.1` link
-- [ ] After activation, global Demo links resolve to `https://demo.metahaus.studio` and product links resolve to `/os`, `/cloud` and `/immersive`
+- [ ] After activation, configured product links resolve through `https://demo.metahaus.studio` to `/os`, `/cloud` and `/immersive`
 - [ ] Every preview destination returns HTTP 200 and its Back to MetaHaus link returns to the correct homepage product context
 - [ ] Preview destinations remain capture-based and do not iframe, expose or link directly to development applications
 - [ ] OS and Cloud captures retain their natural aspect ratios without meaningful interface cropping
