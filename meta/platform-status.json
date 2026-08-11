@@ -1,189 +1,100 @@
 {
-  "schemaVersion": "1.2",
+  "schemaVersion": "1.3",
   "lastUpdated": "2026-08-11",
   "publicExperience": {
     "hierarchy": [
-      "studio",
-      "product-proof",
-      "live-demo",
-      "work-with-metahaus"
+      { "surface": "MetaHaus Studio", "purpose": "Why MetaHaus?" },
+      { "surface": "Product pages and proof", "purpose": "Is it real?" },
+      { "surface": "MetaHaus Demo", "purpose": "Show me." },
+      { "surface": "MetaHaus OS, Cloud and Immersive", "purpose": "Experience it." },
+      { "surface": "Work with MetaHaus", "purpose": "Let’s buy or build." }
     ],
-    "studioPurpose": "Company positioning, product overview, capabilities, worlds, selected work and commercial conversion",
     "demo": {
       "enabled": false,
-      "status": "not-publicly-deployed",
+      "status": "configured-but-disabled-pending-deployment-approval",
       "baseUrl": "https://demo.metahaus.studio",
       "activationSource": "js/public-experience-config.js",
       "routes": {
         "root": "/",
-        "metahaus-os": "/os",
-        "metahaus-cloud": "/cloud",
-        "metahaus-immersive": "/immersive"
-      }
+        "os": "/os",
+        "cloud": "/cloud",
+        "immersive": "/immersive"
+      },
+      "immersiveRuntimeFutureHandoff": "https://immersive.demo.metahaus.studio/"
     },
     "proofPages": {
-      "metahaus-os": "preview-os.html",
-      "metahaus-cloud": "preview-cloud.html",
-      "metahaus-immersive": "preview-immersive.html"
+      "os": "preview-os.html",
+      "cloud": "preview-cloud.html",
+      "immersive": "preview-immersive.html"
     },
-    "homepageProofStrategy": {
-      "metahaus-os": "one-organization-home-image",
-      "metahaus-cloud": "no-image-until-verified-cloud-owned-capture",
-      "metahaus-immersive": "one-approved-gallery-source-artwork",
-      "metahaus-ai": "no-preview",
-      "metahaus-furniture": "no-preview"
+    "homepageImagePolicy": {
+      "statement": "The MetaHaus homepage is not a product screenshot gallery.",
+      "productUiImages": 0,
+      "productProofImages": 0,
+      "dedicatedProofPagesRetainApprovedEvidence": true,
+      "demoOwnsLiveInteractiveExperience": true,
+      "selectedWorkMayRetainApprovedClientOrProjectVisuals": true
     }
   },
   "products": [
     {
+      "order": 1,
       "id": "metahaus-os",
       "name": "MetaHaus OS",
       "status": "private-access",
       "statusLabel": "Private Access",
-      "maturityOrder": 1,
       "positioningLine": "Run the business.",
-      "publicSummary": "The connected operating system for organizations, commercial workflows, client operations, delivery and executive visibility.",
-      "commercialAvailability": {
-        "model": "studio-client-engagement",
-        "summary": "Studio-client access during active engagements",
-        "publicOffer": false,
-        "includedWithActiveStudioEngagement": true,
-        "separateOsSubscriptionDuringActiveEngagement": false,
-        "directOsOnboardingPublic": false,
-        "selfServiceCheckout": false
-      },
-      "approvedPublicPricing": null,
-      "publicPreview": {
-        "state": "verified-sanitized-interface",
-        "type": "product-interface",
-        "homepageAnchor": "#os-preview",
-        "destination": "preview-os.html",
-        "captureBased": true,
-        "publicLiveDemo": false,
-        "sourceProject": "metahaus-platform/metahaus-contracts",
-        "sanitized": true,
-        "captureApproval": "manual-authoritative-public-capture",
-        "sourceRoutes": [
-          "/",
-          "/workspaces/demo-client",
-          "/system/persistence"
-        ],
-        "sourceAssets": [
-          "assets/images/previews/metahaus-os-organization-home.png",
-          "assets/images/previews/metahaus-os-workspace-overview.png",
-          "assets/images/previews/metahaus-os-workflow-engine.png",
-          "assets/images/previews/metahaus-os-persistence-center.png"
-        ],
-        "homepageSourceAsset": "assets/images/previews/metahaus-os-organization-home.png",
-        "homepageImageLimit": 1,
-        "dataClassification": "MetaHaus-owned sanitized demonstration data"
-      },
-      "futurePlannedStatus": "Optional post-handover subscriptions and direct MetaHaus OS subscriptions are planned but not publicly available.",
-      "lastUpdated": "2026-08-11"
+      "proofRoute": "preview-os.html",
+      "demoRoute": "/os",
+      "approvedPublicPricing": null
     },
     {
+      "order": 2,
       "id": "metahaus-immersive",
       "name": "MetaHaus Immersive",
       "status": "project-access",
       "statusLabel": "Project Access",
-      "maturityOrder": 2,
       "positioningLine": "Experience the business in space.",
-      "publicSummary": "Custom spatial environments and experiences built on the MetaHaus Spatial Runtime, including galleries, exhibitions, product experiences and virtual walkthroughs.",
-      "commercialAvailability": {
-        "model": "custom-project",
-        "publicOffer": false,
-        "selfServiceCheckout": false
-      },
-      "approvedPublicPricing": null,
-      "publicPreview": {
-        "state": "verified-source-material",
-        "type": "gallery-proving-experience",
-        "homepageAnchor": "#immersive-preview",
-        "destination": "preview-immersive.html",
-        "captureBased": true,
-        "publicLiveDemo": false,
-        "sourceProject": "metahaus-immersive",
-        "runtime": "MetaHaus Spatial Runtime",
-        "sourceAssets": [
-          "assets/images/previews/gallery-threshold-one.svg",
-          "assets/images/previews/gallery-quiet-grid.svg",
-          "assets/images/previews/gallery-signal-fold.svg"
-        ],
-        "homepageSourceAsset": "assets/images/previews/gallery-threshold-one.svg",
-        "homepageImageLimit": 1
-      },
-      "futurePlannedStatus": "Commerce integrations, AR and WebXR remain later platform phases.",
-      "lastUpdated": "2026-08-11"
+      "proofRoute": "preview-immersive.html",
+      "demoRoute": "/immersive",
+      "approvedPublicPricing": null
     },
     {
+      "order": 3,
       "id": "metahaus-cloud",
       "name": "MetaHaus Cloud",
       "status": "in-development",
       "statusLabel": "In Development",
-      "maturityOrder": 3,
       "positioningLine": "Build and distribute the operating system.",
-      "publicSummary": "The governed composition and distribution layer for engines, manifests, versions, packs and organization-specific capabilities.",
-      "commercialAvailability": {
-        "model": "not-commercially-launched",
-        "publicOffer": false,
-        "selfServiceCheckout": false
-      },
-      "approvedPublicPricing": null,
-      "publicPreview": {
-        "state": "awaiting-verified-cloud-interface",
-        "type": "development-boundary",
-        "homepageAnchor": "#cloud-preview",
-        "destination": "preview-cloud.html",
-        "captureBased": false,
-        "publicLiveDemo": false,
-        "sourceProject": "metahaus-platform/metahaus-contracts",
-        "captureApproval": null,
-        "sourceAssets": [],
-        "homepageSourceAsset": null,
-        "homepageImageLimit": 1,
-        "assetCorrection": "Previously labelled Cloud captures were audited as MetaHaus OS surfaces and are not used as Cloud evidence.",
-        "runtimeActivation": false,
-        "commercialAvailability": false
-      },
-      "futurePlannedStatus": "Licensing, Marketplace, enterprise deployment and a developer platform are planned for later phases.",
-      "lastUpdated": "2026-08-11"
+      "proofRoute": "preview-cloud.html",
+      "demoRoute": "/cloud",
+      "runtimeActivation": false,
+      "approvedPublicPricing": null
     },
     {
+      "order": 4,
       "id": "metahaus-ai",
       "name": "MetaHaus AI",
       "status": "in-development",
       "statusLabel": "In Development",
-      "maturityOrder": 4,
-      "positioningLine": "Intelligence grounded in real operating context.",
-      "publicSummary": "AI workspaces, reusable intelligence and automation designed around real work and operating contexts.",
-      "commercialAvailability": {
-        "model": "not-commercially-launched",
-        "publicOffer": false,
-        "selfServiceCheckout": false
-      },
-      "approvedPublicPricing": null,
-      "publicPreview": null,
-      "futurePlannedStatus": "General product access and subscription terms are not announced.",
-      "lastUpdated": "2026-08-10"
+      "publicSummary": "AI workspaces, reusable intelligence and automation designed around real operating context.",
+      "demoRoute": null,
+      "approvedPublicPricing": null
     },
     {
+      "order": 5,
       "id": "metahaus-furniture",
       "name": "MetaHaus Furniture",
       "status": "project-access",
       "statusLabel": "Project Access",
-      "maturityOrder": 5,
-      "positioningLine": "Commercial Furniture & Spatial Systems.",
-      "publicSummary": "Commercial furniture, materials, spatial visualization and project partnerships for hospitality, development and architecture.",
-      "commercialAvailability": {
-        "model": "commercial-project",
-        "publicOffer": false,
-        "consumerRetail": false,
-        "selfServiceCheckout": false
-      },
-      "approvedPublicPricing": null,
-      "publicPreview": null,
-      "futurePlannedStatus": "Trade Portal is Coming Soon; no public launch date or consumer checkout is announced.",
-      "lastUpdated": "2026-08-10"
+      "demoRoute": null,
+      "approvedPublicPricing": null
     }
-  ]
+  ],
+  "commercialAvailability": {
+    "publicSelfServiceCheckout": false,
+    "publicPricing": false,
+    "osStudioClientAccessDuringActiveEngagements": true,
+    "futureDirectAccessRequiresCommercialAndLegalApproval": true
+  }
 }
