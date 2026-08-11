@@ -16,14 +16,23 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] Direct OS onboarding and subscription sales are not presented as publicly available
 - [ ] No OS price, inactive edition, Cloud tier or future price appears publicly or as purchasable
 - [ ] The OS CTA follows the Studio/contact pathway; there is no checkout
-- [ ] MetaHaus OS, MetaHaus Immersive and MetaHaus Cloud are the only products with 2026.3 preview surfaces
+- [ ] MetaHaus OS, MetaHaus Immersive and MetaHaus Cloud are the only products with dedicated proof pages
+- [ ] Homepage proof density is limited to one OS image, zero verified Cloud images and one Immersive image
 - [ ] The OS preview uses only the four manually approved captures and approved sanitized demonstration identities
+- [ ] The homepage uses only the OS Organization Home capture; Workspace Overview, Workflow & Delivery and Identity & Persistence remain on `preview-os.html`
 - [ ] The Immersive preview uses only approved Gallery proving-experience source assets
+- [ ] The homepage Immersive treatment uses only one approved source artwork; deeper Gallery evidence remains on `preview-immersive.html`
 - [ ] The Immersive preview does not present AR, WebXR or commerce integration as currently available
-- [ ] The Cloud preview uses only the two manually approved Engine Launcher and Workspace Composition captures
+- [ ] MetaHaus Cloud uses no OS Engine Launcher, workspace, contract, client, workflow or persistence imagery as Cloud evidence
+- [ ] No Cloud homepage image appears until a verified Cloud-owned development capture is approved
 - [ ] The Cloud preview does not imply runtime activation, installation, assignment, commercial availability or launch readiness
 - [ ] AI and Furniture do not display product previews
 - [ ] Homepage preview links resolve to `preview-os.html`, `preview-immersive.html` and `preview-cloud.html`
+- [ ] Proof CTA language uses Explore/Inspect, Live Demo language uses Launch/Enter, and Work with MetaHaus remains commercial conversion
+- [ ] `js/public-experience-config.js` keeps Demo disabled until RC1.8 deployment approval
+- [ ] Disabled Demo configuration renders no live-demo anchors or empty layout placeholders
+- [ ] No public page contains a localhost or `127.0.0.1` link
+- [ ] After activation, global Demo links resolve to `https://demo.metahaus.studio` and product links resolve to `/os`, `/cloud` and `/immersive`
 - [ ] Every preview destination returns HTTP 200 and its Back to MetaHaus link returns to the correct homepage product context
 - [ ] Preview destinations remain capture-based and do not iframe, expose or link directly to development applications
 - [ ] OS and Cloud captures retain their natural aspect ratios without meaningful interface cropping

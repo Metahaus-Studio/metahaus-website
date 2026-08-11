@@ -16,6 +16,8 @@ The public MetaHaus website is a static-first marketing, storytelling and routin
 index.html              Rebuilt public homepage
 css/styles.css          Tokens, components, responsive rules, motion and legacy compatibility
 js/main.js              Navigation, portal state, accessibility and motion behavior
+js/public-experience-config.js Central Live Demo enablement, base URL and route map
+js/public-experience.js Activates inert Demo CTA templates only when approved
 scripts/serve.mjs       Dependency-free local preview server
 assets/images/          Existing image library
 meta/platform-status.json Public product status and approved commercial truth
@@ -57,9 +59,32 @@ The commercial progression is Studio → OS → AI, automation and additional ca
 
 No OS or Cloud subscription catalogue is approved for public display. Future OS tiers should correspond to actual usage, capabilities, users, workspaces, automation and service level—not company size alone. Do not store unpublished commercial pricing in public website assets.
 
-## Product preview truth
+## Public experience hierarchy
 
-Release 2026.3 adds restrained, capture-based proof surfaces for MetaHaus OS, MetaHaus Immersive and MetaHaus Cloud. The homepage presents one dominant proof surface per eligible product; dedicated static preview destinations provide the deeper evidence gallery.
+The approved public journey has four distinct layers:
+
+1. **MetaHaus Studio — Why MetaHaus?** Company positioning, ownership, capabilities, Worlds, selected work and conversion on `metahaus.studio`.
+2. **Product Proof — Inspect it.** Controlled static evidence at `preview-os.html`, `preview-cloud.html` and `preview-immersive.html`.
+3. **MetaHaus Demo — Experience it.** The future isolated product environment at `https://demo.metahaus.studio` with `/os`, `/cloud` and `/immersive` routes.
+4. **Work with MetaHaus — Buy/build.** Commercial discovery, proposal and engagement through the Studio contact path.
+
+The Live Demo is not publicly deployed or enabled. `js/public-experience-config.js` is the only public-site source for Demo activation, base URL and product route mapping:
+
+```js
+demo: {
+  enabled: false,
+  baseUrl: "https://demo.metahaus.studio",
+  routes: { root: "/", os: "/os", cloud: "/cloud", immersive: "/immersive" }
+}
+```
+
+While disabled, Demo CTAs remain inert `<template>` content and no live-demo anchor, placeholder, localhost URL or dead production URL is rendered. Static product-proof and Work with MetaHaus links remain ordinary HTML navigation.
+
+After RC1.8 deployment approval, verify the production Demo root and all three product routes first, then change only `enabled: false` to `enabled: true` in `js/public-experience-config.js`. The enhancement script will activate the global and product-specific Demo CTAs using the configured HTTPS base URL. Re-run the complete release checklist before publishing Studio.
+
+## Product proof truth
+
+Release 2026.4 separates Studio positioning from deeper product inspection. The homepage uses one dominant OS Organization Home capture, one approved Immersive Gallery artwork treatment and no Cloud image until a verified Cloud-owned capture is approved. Dedicated static proof pages carry deeper inspection without turning the homepage into a screenshot gallery.
 
 The site has no routing framework or deployment rewrite configuration, so the preview destinations use file-based URLs that work with the existing static host:
 
@@ -69,14 +94,14 @@ The site has no routing framework or deployment rewrite configuration, so the pr
 
 - MetaHaus OS uses four manually approved interface captures covering Organization Home, Workspace Overview, Workflow & Delivery, and Identity & Persistence. The captures contain only the approved MetaHaus-owned demonstration identity: MetaHaus Demo Company, MetaHaus Operator, MetaHaus Demo Workspace and Northstar Product Launch. No interface content is cropped, altered or reconstructed.
 - MetaHaus Immersive uses three original rights-safe artwork surfaces from the verified Gallery proving experience in `metahaus-immersive`. The website frame is a presentation of real Gallery source material, not a fabricated runtime screenshot or a claim that future AR, WebXR or commerce phases are available.
-- MetaHaus Cloud uses manually approved platform-development captures showing the Engine Launcher and Workspace Composition surfaces. They demonstrate reusable operating capabilities and contextual module composition while explicitly making no claim of standalone Cloud availability, provider connection, runtime activation or commercial availability.
+- MetaHaus Cloud currently uses no interface capture. The two files previously labelled as Cloud were audited as MetaHaus OS Engine Launcher and workspace/profile surfaces, so they are not presented as Cloud evidence. `preview-cloud.html` retains only verified development-boundary facts until a Cloud-owned capture is installed and approved.
 - MetaHaus AI and MetaHaus Furniture intentionally have no 2026.3 preview surface.
 
-The authoritative public preview assets are the manually approved captures at `assets/images/previews/metahaus-os-organization-home.png`, `metahaus-os-workspace-overview.png`, `metahaus-os-workflow-engine.png`, `metahaus-os-persistence-center.png`, `metahaus-cloud-engine-registry.png`, `metahaus-cloud-engine-packs.png` and the three approved Gallery SVGs. They are presented without cropping or pixel reinterpretation, using responsive containment at their source aspect ratios. New interface imagery must be captured from real product surfaces and reviewed for customer names, workspace data, financial values, provider states and credentials before publication.
+The authoritative public proof assets are the four approved OS captures and the three approved Gallery SVGs. OS Organization Home and Gallery Threshold One are the only homepage proof images. The remaining approved OS and Gallery assets stay on their dedicated proof pages. The two incorrectly labelled Cloud files remain unused pending later asset cleanup and are not authoritative Cloud evidence. New interface imagery must be captured from the owning product and reviewed for customer names, workspace data, financial values, provider states and credentials before publication.
 
 Preview status and source paths are recorded in `meta/platform-status.json`. A preview must never change commercial status, availability or product maturity.
 
-The current public architecture is **Product Preview → controlled, capture-based product evidence**. It does not connect the public website to MetaHaus OS, MetaHaus Cloud, localhost, an authenticated deployment or a public demo environment. A future **Public Sandbox / Live Demo** requires deliberately isolated demonstration data, explicit read-only behavior, production-safe authentication and isolation, and an independently supported deployment before it can be linked publicly.
+Studio does not connect to localhost, an authenticated application or a public Demo while Demo is disabled. Product Proof remains static evidence. Live Demo activation requires the separately isolated Demo deployment and explicit RC1.8 approval before Studio links are enabled.
 
 ## Local preview on Windows
 
