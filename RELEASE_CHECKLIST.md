@@ -17,11 +17,11 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] No OS price, inactive edition, Cloud tier or future price appears publicly or as purchasable
 - [ ] The OS CTA follows the Studio/contact pathway; there is no checkout
 - [ ] MetaHaus OS, MetaHaus Immersive and MetaHaus Cloud are the only products with dedicated proof pages
-- [ ] Homepage proof density is limited to one OS image, zero verified Cloud images and one Immersive image
+- [ ] Homepage product UI and product-proof image count is zero
 - [ ] The OS preview uses only the four manually approved captures and approved sanitized demonstration identities
-- [ ] The homepage uses only the OS Organization Home capture; Workspace Overview, Workflow & Delivery and Identity & Persistence remain on `preview-os.html`
+- [ ] Organization Home, Workspace Overview, Workflow & Delivery and Identity & Persistence remain on `preview-os.html`
 - [ ] The Immersive preview uses only approved Gallery proving-experience source assets
-- [ ] The homepage Immersive treatment uses only one approved source artwork; deeper Gallery evidence remains on `preview-immersive.html`
+- [ ] Approved Gallery source artwork remains on `preview-immersive.html` and does not render in the homepage product portfolio
 - [ ] The Immersive preview does not present AR, WebXR or commerce integration as currently available
 - [ ] MetaHaus Cloud uses no OS Engine Launcher, workspace, contract, client, workflow or persistence imagery as Cloud evidence
 - [ ] No Cloud homepage image appears until a verified Cloud-owned development capture is approved
@@ -29,7 +29,7 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] AI and Furniture do not display product previews
 - [ ] Homepage preview links resolve to `preview-os.html`, `preview-immersive.html` and `preview-cloud.html`
 - [ ] Proof CTA language uses Explore/Inspect, Live Demo language uses Launch/Enter, and Work with MetaHaus remains commercial conversion
-- [ ] `js/public-experience-config.js` keeps Demo disabled until RC1.8 deployment approval
+- [ ] `js/public-experience-config.js` keeps Demo disabled until deployment approval
 - [ ] Disabled Demo configuration renders no live-demo anchors or empty layout placeholders
 - [ ] No public page contains a localhost or `127.0.0.1` link
 - [ ] After activation, global Demo links resolve to `https://demo.metahaus.studio` and product links resolve to `/os`, `/cloud` and `/immersive`
@@ -37,7 +37,6 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] Preview destinations remain capture-based and do not iframe, expose or link directly to development applications
 - [ ] OS and Cloud captures retain their natural aspect ratios without meaningful interface cropping
 - [ ] The Immersive destination explicitly identifies the approved-source limitation and does not present its artwork composition as a runtime screenshot
-- [ ] Database recovery language remains database-only and describes RPO/RTO values as targets, not guarantees
 - [ ] GrabMe partnership wording approved
 - [ ] GrabMe remains only under Selected Work / Partnerships and is identified as client-owned
 - [ ] `PORTAL_URL` either configured with the approved HTTPS URL or intentionally left in private-access notice mode
@@ -64,7 +63,7 @@ Test each width at a representative viewport height and capture the listed scree
 | 320px | Smallest navigation, portal CTA, hero wrapping, system diagram, one-column cards, dialog, footer | Hero with menu closed and open |
 | 375px | Common phone hierarchy, buttons, capability labels, World cards | Hero and Products |
 | 430px | Large phone spacing, furniture crop, Selected Work | Furniture and Selected Work |
-| 768px | Tablet navigation mode, stacked hero, OS interface, two-column relationships | Hero and MetaHaus OS |
+| 768px | Tablet navigation mode, stacked hero and two-column product relationships | Hero and Products |
 | 1024px | Compact desktop grid, navigation, product modules, partnership layout | Full viewport and Selected Work |
 | 1280px | Standard desktop rhythm, line lengths and card proportions | Hero and Products |
 | 1440px | Primary desktop presentation | Full-page screenshot |
