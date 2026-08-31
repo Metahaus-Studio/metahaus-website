@@ -50,7 +50,7 @@ Commerce Engine remains a MetaHaus-owned reusable capability. MetaHaus Immersive
 The public maturity order is:
 
 1. MetaHaus OS — `Private Access`; shipped through authenticated access, with controlled public proof
-2. MetaHaus Immersive — `Project Access`; Gallery public-demo access is approved but remains gated until its canonical domain passes end-to-end verification
+2. MetaHaus Immersive — `Project Access`; the isolated Gallery experience is approved and active for public demo access through its canonical domain
 3. MetaHaus Cloud — `In Development`
 4. MetaHaus AI — `In Development`; evidence-aware context intelligence is already shipped inside OS, while standalone provider-backed generative and autonomous capabilities remain future-facing
 5. MetaHaus Furniture — `Project Access`, commercial and project-based
@@ -89,17 +89,9 @@ Do not change the global boolean to `true` merely because one product gains an a
 
 Homepage product cards own the Proof, Demo and commercial action model. Only products with an approved route and an authored Demo CTA template participate. MetaHaus AI and MetaHaus Furniture intentionally have no Demo route or CTA today; either can join later by adding an approved central route and card action without changing the homepage structure or inventing a URL in advance.
 
-The Gallery proving experience is approved for **public demo access only**; MetaHaus Immersive is not represented as a generally available standalone public product. The canonical destination is `https://immersive.demo.metahaus.studio/`, backed by the isolated `metahaus-immersive-demo` Vercel project. The CTA remains disabled because the canonical hostname currently has no DNS record and public end-to-end verification cannot yet pass.
+The Gallery proving experience is approved for **public demo access only**; MetaHaus Immersive is not represented as a generally available standalone public product. The canonical destination is `https://immersive.demo.metahaus.studio/`, backed by the isolated `metahaus-immersive-demo` Vercel project. DNS, certificate, startup, asset, navigation and isolation checks have passed, so **Enter Gallery Demo** is independently enabled alongside **Explore Immersive Proof**. The global Demo switch remains disabled.
 
-The remaining launch sequence is exact:
-
-1. Assign the latest approved production deployment of `metahaus-immersive-demo` to the Vercel alias `immersive.demo.metahaus.studio`.
-2. At the current GoDaddy DNS provider, create `A immersive.demo.metahaus.studio 76.76.21.21` (host/name `immersive.demo`, value `76.76.21.21`; use the provider’s normal/default TTL).
-3. Wait for public DNS and Vercel certificate issuance, then verify HTTPS, the Gallery loading path, assets, navigation and interaction on the canonical hostname.
-4. Confirm that no debug/profile selector, internal experience, admin surface or non-approved content is exposed.
-5. Change only `products.immersive.enabled` to `true` in `js/public-experience-config.js`, then re-run website QA.
-
-Until all five steps pass, `Explore Immersive Proof` remains the only public evidence CTA and the inert future action reads **Enter Gallery Demo**. Do not substitute a `vercel.app` URL, `vrexhibitions.com`, a legacy recovery experience, legacy Furniture VR or the password-gated Furniture storefront.
+Do not substitute a `vercel.app` URL, `vrexhibitions.com`, a legacy recovery experience, legacy Furniture VR or the password-gated Furniture storefront. Any future public product destination must independently pass the same canonical-domain, runtime, content-isolation and approval gates before activation.
 
 ## Public product and commercial architecture
 
@@ -155,7 +147,7 @@ The authoritative public proof assets remain the four approved OS captures and t
 
 Proof status and source paths are recorded in `meta/platform-status.json`. Controlled proof must never be used as the availability or product-maturity label for MetaHaus OS.
 
-Studio does not connect to localhost, an authenticated application or a public Demo while Demo is disabled. Product Proof remains static evidence. Live Demo activation requires the separately isolated Demo deployment and explicit deployment approval before Studio links are enabled.
+Studio does not connect to localhost or expose authenticated product applications. Product Proof remains static evidence. The independently approved Gallery demo is the only active public product-demo destination; every other live Demo action remains disabled until its isolated deployment and explicit activation approval are complete.
 
 ## Local preview on Windows
 

@@ -42,11 +42,11 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] Product cards distinguish `Explore Immersive Proof` from the independently gated `Enter Gallery Demo` action
 - [ ] Homepage has no standalone Demo explanation or large Product Access section
 - [ ] AI and Furniture render no Demo CTA until an approved central route exists
-- [ ] `js/public-experience-config.js` keeps the global Demo switch disabled and the independent Immersive destination disabled until canonical-domain verification passes
-- [ ] Disabled Demo configuration renders no live-demo anchors or empty layout placeholders
+- [ ] `js/public-experience-config.js` keeps the global Demo switch disabled while the independently verified Immersive destination is enabled
+- [ ] Disabled product Demo configuration renders no live-demo anchors or empty layout placeholders
 - [ ] No public page contains a localhost or `127.0.0.1` link
 - [ ] The global Demo switch is not activated when Gallery launches; only `products.immersive.enabled` may change after approval gates pass
-- [ ] The Gallery canonical destination is `https://immersive.demo.metahaus.studio/` and no active CTA is rendered while DNS or end-to-end verification is incomplete
+- [ ] The active Gallery CTA resolves only to the verified canonical destination `https://immersive.demo.metahaus.studio/`
 - [ ] The Vercel alias targets the latest approved `metahaus-immersive-demo` production deployment
 - [ ] GoDaddy DNS contains `A immersive.demo.metahaus.studio 76.76.21.21`, public DNS resolves and the canonical certificate is valid
 - [ ] The canonical Gallery experience loads to an interactive state without exposing debug/profile selectors, internal experiences, admin surfaces or non-approved content

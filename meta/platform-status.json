@@ -22,13 +22,13 @@
         "immersive": "/immersive"
       },
       "immersiveCandidate": {
-        "status": "approved-public-demo-pending-dns-and-end-to-end-verification",
-        "hostingEvidence": "reachable Vercel deployment verified by cross-repository audit",
+        "status": "approved-public-demo-active",
+        "hostingEvidence": "canonical HTTPS destination and isolated Gallery profile verified end to end",
         "approvedPublicDestination": "https://immersive.demo.metahaus.studio/",
-        "ctaEnabled": false,
+        "ctaEnabled": true,
         "ctaLabel": "Enter Gallery Demo",
         "standaloneProductAvailability": false,
-        "remainingLaunchGate": "Create the required DNS record, assign the canonical Vercel alias, then verify the isolated Gallery profile end to end."
+        "remainingLaunchGate": null
       },
       "futureParticipationPolicy": "MetaHaus AI and MetaHaus Furniture may receive Demo actions only after a controlled experience and central route are approved."
     },
@@ -126,9 +126,9 @@
       "positioningLine": "Experience the business in space.",
       "proofRoute": "preview-immersive.html",
       "demoRoute": "/immersive",
-      "demoCandidateStatus": "approved-public-demo-pending-dns-and-end-to-end-verification",
+      "demoCandidateStatus": "approved-public-demo-active",
       "approvedPublicDemoUrl": "https://immersive.demo.metahaus.studio/",
-      "publicDemoCtaEnabled": false,
+      "publicDemoCtaEnabled": true,
       "publicDemoCtaLabel": "Enter Gallery Demo",
       "standalonePublicAvailability": false,
       "approvedPublicPricing": null
