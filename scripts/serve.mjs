@@ -62,6 +62,19 @@ const server = http.createServer((request, response) => {
       return;
     }
 
+    if (!error && stats.isDirectory()) {
+      const indexPath = path.join(requestedPath, "index.html");
+      fs.stat(indexPath, (indexError, indexStats) => {
+        if (!indexError && indexStats.isFile()) {
+          sendFile(response, indexPath);
+          return;
+        }
+
+        sendFile(response, path.join(root, "404.html"), 404);
+      });
+      return;
+    }
+
     sendFile(response, path.join(root, "404.html"), 404);
   });
 });

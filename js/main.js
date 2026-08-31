@@ -1,11 +1,7 @@
 /**
  * MetaHaus public website
- * Static-first navigation, portal configuration and Motion Language v1.
+ * Static-first navigation and Motion Language v1.
  */
-
-// Replace the empty value with the approved production Client Portal URL.
-// Example shape only: "https://portal.example.com"
-const PORTAL_URL = "";
 
 const mobileBreakpoint = window.matchMedia("(max-width: 55rem)");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -24,67 +20,6 @@ function trackAnimation(animation) {
   animation.addEventListener("cancel", () => runningAnimations.delete(animation), { once: true });
 }
 
-function configurePortalLinks() {
-  const portalLinks = document.querySelectorAll("[data-portal-link]");
-  const portalUrl = PORTAL_URL.trim();
-
-  portalLinks.forEach((link) => {
-    if (portalUrl) {
-      link.setAttribute("href", portalUrl);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-      link.removeAttribute("aria-haspopup");
-      link.removeAttribute("aria-controls");
-      link.dataset.portalConfigured = "true";
-    } else {
-      link.setAttribute("href", "#client-portal");
-      link.removeAttribute("target");
-      link.removeAttribute("rel");
-      link.setAttribute("aria-haspopup", "dialog");
-      link.setAttribute("aria-controls", "portal-notice");
-      link.dataset.portalConfigured = "false";
-    }
-  });
-
-  const portalAction = document.querySelector("[data-portal-action]");
-  if (portalAction && portalUrl) {
-    portalAction.firstChild.textContent = "Open Client Portal ";
-  }
-}
-
-function initializePortalNotice() {
-  const dialog = document.querySelector("#portal-notice");
-  if (!dialog || typeof dialog.showModal !== "function") return;
-
-  const closeButton = dialog.querySelector("[data-portal-close]");
-  let invokingControl = null;
-
-  document.querySelectorAll('[data-portal-link][data-portal-configured="false"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      invokingControl = link;
-      dialog.showModal();
-      closeButton?.focus();
-    });
-  });
-
-  closeButton?.addEventListener("click", () => dialog.close());
-
-  dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) dialog.close();
-  });
-
-  dialog.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-    event.preventDefault();
-    dialog.close();
-  });
-
-  dialog.addEventListener("close", () => {
-    invokingControl?.focus();
-    invokingControl = null;
-  });
-}
 
 function initializeNavigation() {
   const toggle = document.querySelector(".nav-toggle");
@@ -478,8 +413,6 @@ function setCurrentYear() {
   });
 }
 
-configurePortalLinks();
-initializePortalNotice();
 initializeNavigation();
 initializeActiveNavigation();
 initializeVisibilityState();

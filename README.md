@@ -1,6 +1,6 @@
 # MetaHaus public website
 
-The public MetaHaus website is a static-first marketing, storytelling and routing layer. MetaHaus OS remains the application platform; this repository does not contain the Client Portal or product applications.
+The public MetaHaus website is a static-first marketing, storytelling and routing layer. MetaHaus OS remains the application platform; this repository does not contain the authenticated OS application or product runtimes.
 
 ## Current architecture
 
@@ -14,8 +14,12 @@ The public MetaHaus website is a static-first marketing, storytelling and routin
 
 ```text
 index.html              Rebuilt public homepage
+os/index.html           Flagship MetaHaus OS product page
+os/pricing/index.html   Noindex pricing-readiness boundary; no plans or prices
+os/signup/index.html    Noindex signup-readiness boundary; no provisioning
+login/index.html        Universal existing-access bridge to portal.metahaus.studio
 css/styles.css          Tokens, components, responsive rules, motion and legacy compatibility
-js/main.js              Navigation, portal state, accessibility and motion behavior
+js/main.js              Navigation, accessibility and motion behavior
 js/public-experience-config.js Central Live Demo enablement, base URL and route map
 js/public-experience.js Activates inert Demo CTA templates only when approved
 scripts/serve.mjs       Dependency-free local preview server
@@ -85,6 +89,41 @@ After deployment approval, verify the production Demo root and all three product
 
 Homepage product cards own the Proof, Demo and commercial action model. Only products with an approved route and an authored Demo CTA template participate. MetaHaus AI and MetaHaus Furniture intentionally have no Demo route or CTA today; either can join later by adding an approved central route and card action without changing the homepage structure or inventing a URL in advance.
 
+## Public product and commercial architecture
+
+MetaHaus presents three related but distinct ecosystem paths:
+
+- **MetaHaus OS — Operate:** for businesses that want to run their organization through MetaHaus.
+- **MetaHaus Studio — Build With Us:** for companies that want MetaHaus to design and build products, systems, experiences, software or custom infrastructure.
+- **MetaHaus Cloud — Build Yourself:** for developers and teams that will compose and govern reusable MetaHaus Engines and capabilities. Cloud remains `In Development`.
+
+Do not collapse these into one agency or generic SaaS narrative. Preserve the long-term evolution `Services → SaaS → Platform`.
+
+The current commercial-route architecture is:
+
+| Route | Current purpose | Public state |
+|---|---|---|
+| `/` | MetaHaus company, ecosystem, products, capabilities, Worlds, selected work and Studio conversion | Public |
+| `/os/` | Flagship MetaHaus OS narrative, verified product boundaries and Studio-to-OS lifecycle | Public · Private Access product |
+| `/os/pricing/` | Reserved pricing-readiness boundary | Noindex · no plans, prices or checkout |
+| `/os/signup/` | Reserved direct-access readiness boundary | Noindex · no account or organization provisioning |
+| `/login/` | Universal existing-access bridge to `https://portal.metahaus.studio/` | Noindex · existing access only |
+| `/preview-os.html` | Sanitized MetaHaus OS product evidence | Public controlled proof |
+| `/preview-cloud.html` | Verified MetaHaus Cloud development boundary | Public controlled proof |
+| `/preview-immersive.html` | Verified MetaHaus Immersive / Gallery evidence | Public controlled proof |
+
+Future direct OS acquisition must follow one OS-owned subscription and entitlement architecture:
+
+`understand product → plans → subscribe → create organization → guided setup → portal`
+
+The Studio-client path is separate commercially but converges on the same operating architecture:
+
+`Studio sales and contract → workspace created directly → delivery through MetaHaus OS → launch/handover → optional future continuation subscription`
+
+The public website must not implement a parallel entitlement model. The continuation subscription is expected to be offered primarily inside authenticated OS when approved. It is optional and must never imply that a client automatically becomes a subscriber.
+
+Client deliverables and intellectual property remain governed by their engagement agreement. A future MetaHaus OS subscription pays for the continuing operating environment and applicable intelligence, orchestration, automation, managed infrastructure and support; it does not hold agreed deliverables hostage.
+
 ## Product proof truth
 
 Release 2026.5 separates Studio positioning from product evidence and live interaction. The MetaHaus homepage is not a product screenshot gallery: it renders zero product UI images and zero product-section proof images. Dedicated static proof pages retain approved evidence, while MetaHaus Demo owns the live interactive experience when enabled.
@@ -134,17 +173,11 @@ node scripts/serve.mjs
 
 Opening `index.html` directly is acceptable for a quick content check, but HTTP preview is required for launch QA and 404 testing.
 
-## Client Portal configuration
+## Login and portal architecture
 
-The production Client Portal URL is intentionally unset. There is exactly one configuration location: `PORTAL_URL` near the top of `js/main.js`.
+The public site uses **Log in** as the universal access label rather than describing every future user as a Studio client. Public controls route to `/login/`; that page clearly identifies existing access and links to the established `https://portal.metahaus.studio/` login surface.
 
-```js
-const PORTAL_URL = "";
-```
-
-When empty, portal controls open an accessible notice explaining that access is provided directly to active clients. Without JavaScript, the controls fall back to the honest Client Portal section on the homepage.
-
-Set the constant only to the approved absolute HTTPS portal URL. When configured, all `data-portal-link` controls automatically open that URL safely in a new tab.
+This public bridge supports active Studio clients and other approved OS users without exposing signup, pricing, checkout or provisioning. Preserve the `/login/` public route even after direct subscriptions launch so the public website has one stable access entry and the authenticated application remains owned by the OS architecture.
 
 ## Motion and accessibility expectations
 
@@ -155,7 +188,7 @@ MetaHaus Motion Language v1 uses CSS, IntersectionObserver, the Web Animations A
 - Pointer depth, magnetic controls and module lighting must remain disabled on touch/coarse-pointer devices.
 - `prefers-reduced-motion` must disable orbital drift, depth, magnetic response, word sequencing and connection flow.
 - Keyboard focus must expose the same relationship states as pointer hover.
-- Navigation, portal notice and all CTAs must remain operable by keyboard.
+- Navigation, the `/login/` bridge and all CTAs must remain operable by keyboard.
 - No information may exist only in an animated or hover state.
 
 ## Performance expectations
@@ -180,6 +213,12 @@ The following URLs remain in the repository for continuity but contain retired p
 
 They are not linked from the rebuilt homepage or listed in `sitemap.xml`, and each carries `noindex, follow`. They must not be promoted or restored to active navigation. Permanent redirects or approved replacements are required in a later phase; do not delete the files without approval.
 
+## Trust and legal launch dependencies
+
+The repository does not currently contain approved Privacy, Terms, subscription/billing terms, cancellation, data-handling, provider/subprocessor, security, support or legal-company-identity pages. Do not fabricate these documents or unsupported compliance claims.
+
+Public SaaS pricing, checkout or direct signup must remain disabled until approved source content exists for each applicable trust surface and the MetaHaus OS subscription/entitlement tranche supplies the commercial truth it must describe. Future route candidates are `/privacy/`, `/terms/`, `/subscription-terms/`, `/security/` and `/support/`; create them only from approved legal, operational and security source material.
+
 ## Branch and deployment model
 
 - Active rebuild branch: `codex/metahaus-repositioning`
@@ -193,7 +232,7 @@ They are not linked from the rebuilt homepage or listed in `sitemap.xml`, and ea
 Test at 320, 375, 430, 768, 1024, 1280 and 1440 pixels, plus a wide desktop viewport. At every size verify:
 
 - No horizontal page scrolling
-- Header, menu and Client Portal control fit without collision
+- Header, menu and Log in control fit without collision
 - Hero copy and system diagram preserve hierarchy
 - Headings wrap without clipping or orphaned fragments
 - Product, OS, capability, World and partnership layouts remain readable
@@ -205,7 +244,7 @@ Detailed steps and screenshot requirements are in `RELEASE_CHECKLIST.md`.
 
 ## Launch and rollback
 
-Before launch, complete every required item in `RELEASE_CHECKLIST.md`, confirm product statuses and portal configuration, approve a dedicated Open Graph image, and approve the legacy URL redirect plan.
+Before launch, complete every required item in `RELEASE_CHECKLIST.md`, confirm product statuses and the portal handoff, approve a dedicated Open Graph image, and approve the legacy URL redirect plan.
 
 If a published release must be rolled back:
 
@@ -217,9 +256,10 @@ If a published release must be rolled back:
 
 ## Next planned phases
 
-1. Manual rendered-browser QA and screenshot approval
-2. Dedicated MetaHaus Open Graph artwork
-3. Legacy URL redirects or approved replacement pages
-4. Dedicated product, capability, World, company and contact routes
-5. Real product imagery and interface assets where available
-6. Further asset cleanup after route migration
+1. MetaHaus OS subscription and entitlement architecture
+2. Approved plans, usage dimensions, pricing and continuation rules
+3. Billing, cancellation, privacy, data-handling, security, provider/subprocessor and support source content
+4. Direct account and organization provisioning owned by MetaHaus OS
+5. Dedicated MetaHaus Open Graph artwork
+6. Legacy URL redirects or approved replacement pages
+7. Dedicated Studio and Cloud routes when their commercial narratives require them
