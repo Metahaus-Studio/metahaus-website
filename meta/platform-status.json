@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "1.3",
-  "lastUpdated": "2026-08-11",
+  "schemaVersion": "1.5",
+  "lastUpdated": "2026-08-31",
   "publicExperience": {
     "hierarchy": [
       { "surface": "MetaHaus Studio", "purpose": "Why MetaHaus?" },
@@ -12,6 +12,7 @@
     "demo": {
       "enabled": false,
       "status": "configured-but-disabled-pending-deployment-approval",
+      "activationModel": "global-boolean-retained-for-compatibility; future product experiences require independent destination and launch approval",
       "baseUrl": "https://demo.metahaus.studio",
       "activationSource": "js/public-experience-config.js",
       "routes": {
@@ -20,12 +21,54 @@
         "cloud": "/cloud",
         "immersive": "/immersive"
       },
-      "immersiveRuntimeFutureHandoff": "https://immersive.demo.metahaus.studio/"
+      "immersiveCandidate": {
+        "status": "controlled-demo-candidate-awaiting-launch-approval",
+        "hostingEvidence": "reachable Vercel deployment verified by cross-repository audit",
+        "approvedPublicDestination": null,
+        "futureCtaLabel": "Enter Gallery Experience"
+      },
+      "futureParticipationPolicy": "MetaHaus AI and MetaHaus Furniture may receive Demo actions only after a controlled experience and central route are approved."
     },
     "proofPages": {
       "os": "preview-os.html",
       "cloud": "preview-cloud.html",
       "immersive": "preview-immersive.html"
+    },
+    "commercialRoutes": {
+      "osProduct": {
+        "route": "/os/",
+        "public": true,
+        "purpose": "Flagship MetaHaus OS narrative distinguishing the shipped private-access product, controlled public proof and future public-access boundaries."
+      },
+      "osPricing": {
+        "route": "/os/pricing/",
+        "public": false,
+        "status": "reserved-noindex",
+        "purpose": "Commercial-readiness boundary only; no plans, prices or checkout."
+      },
+      "osSignup": {
+        "route": "/os/signup/",
+        "public": false,
+        "status": "reserved-noindex",
+        "purpose": "Access-readiness boundary only; no account or organization provisioning."
+      },
+      "login": {
+        "route": "/login/",
+        "public": true,
+        "status": "existing-approved-access",
+        "destination": "https://portal.metahaus.studio/",
+        "purpose": "Universal access bridge for people with existing approved MetaHaus OS access."
+      }
+    },
+    "ecosystemPaths": [
+      { "product": "MetaHaus OS", "label": "Operate", "availability": "private-access" },
+      { "product": "MetaHaus Studio", "label": "Build With Us", "availability": "active-commercial-path" },
+      { "product": "MetaHaus Cloud", "label": "Build Yourself", "availability": "in-development" }
+    ],
+    "acquisitionPaths": {
+      "futureDirectOs": ["understand product", "plans", "subscribe", "create organization", "guided setup", "portal"],
+      "studioClient": ["Studio sales and contract", "workspace created directly", "delivery through MetaHaus OS", "launch and handover", "optional future continuation subscription"],
+      "sharedArchitectureRequirement": "Both paths must use the MetaHaus OS subscription and entitlement architecture; the public website must not create a second SaaS architecture."
     },
     "homepageImagePolicy": {
       "statement": "The MetaHaus homepage is not a product screenshot gallery.",
@@ -34,6 +77,13 @@
       "dedicatedProofPagesRetainApprovedEvidence": true,
       "demoOwnsLiveInteractiveExperience": true,
       "selectedWorkMayRetainApprovedClientOrProjectVisuals": true
+    },
+    "homepageActionModel": {
+      "proof": "static product evidence",
+      "demo": "live controlled product environment when centrally enabled",
+      "commercial": "product-appropriate engagement",
+      "standaloneDemoSection": false,
+      "standaloneProductAccessSection": false
     }
   },
   "products": [
@@ -43,7 +93,12 @@
       "name": "MetaHaus OS",
       "status": "private-access",
       "statusLabel": "Private Access",
+      "productMaturity": "shipped-authenticated-private-access",
       "positioningLine": "Run the business.",
+      "publicSummary": "A connected operating environment for organizations and workspaces, commercial operations, governed delivery, access, onboarding, evidence and context intelligence.",
+      "proofStatus": "controlled-public-evidence-of-shipped-product",
+      "publicSelfServiceAvailable": false,
+      "productRoute": "/os/",
       "proofRoute": "preview-os.html",
       "demoRoute": "/os",
       "approvedPublicPricing": null
@@ -57,6 +112,9 @@
       "positioningLine": "Experience the business in space.",
       "proofRoute": "preview-immersive.html",
       "demoRoute": "/immersive",
+      "demoCandidateStatus": "controlled-demo-candidate-awaiting-launch-approval",
+      "approvedPublicDemoUrl": null,
+      "futureExperienceCtaLabel": "Enter Gallery Experience",
       "approvedPublicPricing": null
     },
     {
@@ -65,10 +123,12 @@
       "name": "MetaHaus Cloud",
       "status": "in-development",
       "statusLabel": "In Development",
-      "positioningLine": "Build and distribute the operating system.",
+      "positioningLine": "The future composition layer for reusable operating capabilities.",
+      "publicSummary": "Governance architecture exists, while public runtime, self-build composition and capability distribution remain future-facing.",
       "proofRoute": "preview-cloud.html",
       "demoRoute": "/cloud",
       "runtimeActivation": false,
+      "publicDistributionAvailable": false,
       "approvedPublicPricing": null
     },
     {
@@ -77,8 +137,11 @@
       "name": "MetaHaus AI",
       "status": "in-development",
       "statusLabel": "In Development",
-      "publicSummary": "AI workspaces, reusable intelligence and automation designed around real operating context.",
+      "publicSummary": "Evidence-aware context intelligence is shipped inside MetaHaus OS. Standalone provider-backed generative and autonomous MetaHaus AI capabilities remain in development.",
+      "osContextIntelligenceStatus": "shipped-private-access",
+      "standaloneAvailability": "future",
       "demoRoute": null,
+      "futureDemoEligible": true,
       "approvedPublicPricing": null
     },
     {
@@ -87,14 +150,33 @@
       "name": "MetaHaus Furniture",
       "status": "project-access",
       "statusLabel": "Project Access",
+      "approvedPublicExperienceUrl": null,
       "demoRoute": null,
+      "futureDemoEligible": true,
       "approvedPublicPricing": null
     }
   ],
   "commercialAvailability": {
     "publicSelfServiceCheckout": false,
     "publicPricing": false,
+    "publicSignup": false,
+    "publicAccountProvisioning": false,
+    "subscriptionEntitlementEnforcement": false,
     "osStudioClientAccessDuringActiveEngagements": true,
-    "futureDirectAccessRequiresCommercialAndLegalApproval": true
+    "futureDirectAccessRequiresCommercialAndLegalApproval": true,
+    "studioClientContinuation": "A future post-handover subscription may be offered as an optional choice inside MetaHaus OS; no automatic conversion is implied.",
+    "deliverablesBoundary": "Client deliverables and intellectual property remain governed by their engagement agreement. A future OS subscription pays for the continuing operating environment and applicable intelligence, orchestration, automation, managed infrastructure and support."
+  },
+  "commercialLaunchDependencies": {
+    "osSubscriptionAndEntitlementArchitecture": "required",
+    "approvedPlansAndPricing": "required",
+    "billingAndCancellationTerms": "required",
+    "accountAndOrganizationProvisioning": "required",
+    "privacyAndDataHandling": "required",
+    "providerAndSubprocessorTransparency": "required",
+    "securityPositioning": "required",
+    "supportPolicy": "required",
+    "legalCompanyIdentity": "required",
+    "unsupportedComplianceClaimsAllowed": false
   }
 }
