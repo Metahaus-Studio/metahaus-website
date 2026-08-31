@@ -5,9 +5,10 @@ Complete this checklist against a local HTTP preview and again against the produ
 ## Launch approvals
 
 - [ ] Product order is OS, Immersive, Cloud, AI, Furniture in both the homepage and `meta/platform-status.json`
-- [ ] MetaHaus OS status confirmed as `Private Access`
+- [ ] MetaHaus OS is described as a shipped authenticated product with `Private Access`; controlled proof is not used as the product’s maturity label
 - [ ] MetaHaus Immersive status confirmed as `Project Access`
 - [ ] MetaHaus Cloud and MetaHaus AI statuses confirmed as `In Development`
+- [ ] Evidence-aware context intelligence is identified as shipped inside MetaHaus OS, while standalone provider-backed generative and autonomous MetaHaus AI remains future-facing
 - [ ] MetaHaus Furniture status and project-based commercial wording approved
 - [ ] Homepage status and availability copy matches `meta/platform-status.json`
 - [ ] Active Studio-client OS access is described as integrated into the delivery relationship, not as a separate subscription or “free OS”
@@ -16,35 +17,37 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] Direct OS onboarding and subscription sales are not presented as publicly available
 - [ ] No OS price, inactive edition, Cloud tier or future price appears publicly or as purchasable
 - [ ] The OS CTA follows the Studio/contact pathway; there is no checkout
-- [ ] `/os/` clearly distinguishes Current, Controlled Preview and Upcoming OS areas without claiming unshipped capabilities as live
+- [ ] `/os/` clearly distinguishes shipped Private Access capability, controlled public proof and future-facing capability without claiming unshipped public access
 - [ ] `/os/pricing/` publishes no plan names, prices, checkout or entitlement assumptions and remains `noindex`
 - [ ] `/os/signup/` contains no signup form, account creation or provisioning behavior and remains `noindex`
-- [ ] `/login/` is the universal existing-access entry and its only authenticated destination is `https://portal.metahaus.studio/`
-- [ ] Existing Studio clients and other approved OS users are supported without implying that every OS customer is a Studio client
+- [ ] `/login/` is the universal existing-approved-access entry and its only authenticated destination is `https://portal.metahaus.studio/`
+- [ ] Access copy refers to people with existing approved access without asserting a broad active public customer cohort
 - [ ] Client deliverables and IP are described as governed by their engagement agreement, not held by an OS subscription
 - [ ] Any post-handover continuation subscription is described as future and optional
 - [ ] MetaHaus OS, MetaHaus Immersive and MetaHaus Cloud are the only products with dedicated proof pages
 - [ ] Homepage product UI and product-proof image count is zero
-- [ ] The OS preview uses only the four manually approved captures and approved sanitized demonstration identities
+- [ ] The OS proof page uses only the four manually approved captures and approved sanitized demonstration identities
 - [ ] Organization Home, Workspace Overview, Workflow & Delivery and Identity & Persistence remain on `preview-os.html`
 - [ ] The Immersive preview uses only approved Gallery proving-experience source assets
 - [ ] Approved Gallery source artwork remains on `preview-immersive.html` and does not render in the homepage product portfolio
 - [ ] The Immersive preview does not present AR, WebXR or commerce integration as currently available
 - [ ] MetaHaus Cloud uses no OS Engine Launcher, workspace, contract, client, workflow or persistence imagery as Cloud evidence
-- [ ] No Cloud homepage image appears until a verified Cloud-owned development capture is approved
+- [ ] Cloud evidence remains text-only in this release; there is no stale requirement to produce or publish a Cloud capture
 - [ ] The Cloud preview does not imply runtime activation, installation, assignment, commercial availability or launch readiness
 - [ ] AI and Furniture do not display product previews
 - [ ] Homepage preview links resolve to `preview-os.html`, `preview-immersive.html` and `preview-cloud.html`
-- [ ] Product cards use Explore [Product] Proof, Enter/Explore [Product] Demo, Work with MetaHaus and Build an Experience consistently
+- [ ] Product cards preserve proof and commercial actions; the hidden future Immersive action reads `Enter Gallery Experience`
 - [ ] Homepage has no standalone Demo explanation or large Product Access section
 - [ ] AI and Furniture render no Demo CTA until an approved central route exists
-- [ ] `js/public-experience-config.js` keeps Demo disabled until deployment approval
+- [ ] `js/public-experience-config.js` keeps the global Demo switch disabled; future public experiences require independent product destination and launch approval
 - [ ] Disabled Demo configuration renders no live-demo anchors or empty layout placeholders
 - [ ] No public page contains a localhost or `127.0.0.1` link
-- [ ] After activation, configured product links resolve through `https://demo.metahaus.studio` to `/os`, `/cloud` and `/immersive`
+- [ ] The global Demo switch is not activated merely because one product receives approval; per-product activation architecture is required first
+- [ ] The reachable Gallery/Vercel experience remains an unlinked controlled-demo candidate awaiting launch approval
+- [ ] No page links to absent `immersive.demo.metahaus.studio` DNS, `vrexhibitions.com`, legacy recovery experiences, legacy Furniture VR or the password-gated Furniture storefront
 - [ ] Every preview destination returns HTTP 200 and its Back to MetaHaus link returns to the correct homepage product context
 - [ ] Preview destinations remain capture-based and do not iframe, expose or link directly to development applications
-- [ ] OS and Cloud captures retain their natural aspect ratios without meaningful interface cropping
+- [ ] OS captures retain their natural aspect ratios without meaningful interface cropping; Cloud has no capture in this release
 - [ ] The Immersive destination explicitly identifies the approved-source limitation and does not present its artwork composition as a runtime screenshot
 - [ ] GrabMe partnership wording approved
 - [ ] GrabMe remains only under Selected Work / Partnerships and is identified as client-owned
@@ -108,7 +111,7 @@ At every width:
 - [ ] OS interface motion starts when visible and stops off-screen
 - [ ] Capability and World focus states match their hover states
 - [ ] GrabMe motion reads as a client partnership, not a MetaHaus-owned product
-- [ ] Log in links open the public `/login/` bridge and the bridge clearly labels portal access as existing access
+- [ ] Log in links open the public `/login/` bridge and the bridge clearly labels portal access as existing approved access
 
 ## Keyboard-only review
 
@@ -152,6 +155,8 @@ Reload with DevTools open.
 - [ ] No 404 responses for CSS, JavaScript, favicon or homepage imagery
 - [ ] No third-party script, font or tracking request appears unexpectedly
 - [ ] `meta/platform-status.json` returns HTTP 200 and parses as valid JSON
+- [ ] JavaScript files pass syntax validation, `meta/platform-status.json` parses, and `sitemap.xml` parses as XML
+- [ ] Every local route and internal fragment referenced by active HTML resolves; inert `<template>` Demo anchors remain excluded while disabled
 - [ ] All three Gallery preview SVG assets return HTTP 200
 - [ ] `index.html`, CSS and JavaScript return HTTP 200
 - [ ] `/os/`, `/os/pricing/`, `/os/signup/` and `/login/` return HTTP 200
@@ -187,6 +192,23 @@ matchMedia('(prefers-reduced-motion: reduce)').matches
 - [ ] Sitemap contains only approved public routes
 - [ ] Favicon appears in browser tabs
 - [ ] Approved Open Graph image renders correctly at 1200×630 without retired “Immersive Commerce” wording
+
+## Cross-repository truth follow-up
+
+- [ ] Stale `metahaus-platform/docs/PRODUCTION_AUTHENTICATION.md` is tracked for a platform-owned correction
+- [ ] Stale `metahaus-platform/docs/PRODUCTS.md` is tracked for a platform-owned correction
+- [ ] Stale platform Demo README is tracked for a platform-owned correction
+- [ ] Stale Immersive deployment documentation is tracked for an Immersive-owned correction
+- [ ] Stale `vrexhibitions.com` ownership language is tracked for an Immersive-owned correction
+- [ ] The Managed Founding Customer offer contradiction is tracked for explicit platform supersession
+- [ ] No platform or Immersive repository file is included in the website release boundary
+
+## Final source and staged-boundary review
+
+- [ ] `git diff --check` passes
+- [ ] `git diff --cached --name-only` contains only the approved website semantic-alignment tranche
+- [ ] `git diff --cached` contains no CSS, layout, runtime activation, checkout, signup, pricing, provisioning or unsafe destination change
+- [ ] `git status --short` is reviewed before commit
 
 ## Final production smoke test
 
