@@ -2877,6 +2877,124 @@ h3 {
 .readiness-boundary p { margin: 0; color: var(--color-muted); font-size: 0.82rem; }
 .readiness-details > .button-row { grid-column: 2; }
 
+.pricing-plans-section,
+.pricing-entitlements-section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  border-top: 1px solid var(--color-line);
+}
+
+.pricing-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(20rem, 1fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.pricing-section-heading .eyebrow { grid-column: 1 / -1; margin-bottom: 0; }
+
+.pricing-section-heading h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 520;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.pricing-section-heading > p:last-child,
+.pricing-section-note {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.pricing-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--color-line);
+  border-left: 1px solid var(--color-line);
+}
+
+.pricing-plan-card {
+  display: flex;
+  min-width: 0;
+  min-height: 24rem;
+  flex-direction: column;
+  padding: clamp(1.4rem, 2.5vw, 2.25rem);
+  border-right: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.pricing-plan-card h3 {
+  min-height: 3.5rem;
+  margin: 1.4rem 0 2.5rem;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 540;
+  letter-spacing: -0.035em;
+}
+
+.pricing-plan-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
+  margin: 0;
+}
+
+.pricing-plan-price strong {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.pricing-plan-price span,
+.pricing-plan-annual,
+.pricing-plan-card small {
+  color: var(--color-muted);
+}
+
+.pricing-plan-price span { font-size: 0.76rem; }
+.pricing-plan-annual { margin: 0.8rem 0 0; font-size: 0.82rem; line-height: 1.6; }
+.pricing-plan-card small { margin-top: auto; padding-top: 2.5rem; font-size: 0.68rem; }
+
+.pricing-matrix-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.01);
+  scrollbar-color: var(--color-violet-bright) var(--color-bg-deep);
+}
+
+.pricing-matrix-scroll:focus-visible { outline: 2px solid var(--color-violet-bright); outline-offset: 3px; }
+
+.pricing-matrix {
+  width: 100%;
+  min-width: 48rem;
+  border-collapse: collapse;
+  font-size: 0.76rem;
+}
+
+.pricing-matrix th,
+.pricing-matrix td {
+  padding: 1rem;
+  border-right: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+}
+
+.pricing-matrix tr:last-child th,
+.pricing-matrix tr:last-child td { border-bottom: 0; }
+.pricing-matrix th:last-child,
+.pricing-matrix td:last-child { border-right: 0; }
+.pricing-matrix thead th { color: var(--color-text); font-weight: 650; }
+.pricing-matrix tbody th { color: var(--color-text-soft); font-weight: 560; }
+.pricing-matrix td { color: var(--color-muted); }
+.pricing-continuation { margin-bottom: clamp(2rem, 6vw, 6rem); }
+
 .future-route {
   margin: 0;
   padding: 0;
@@ -3823,6 +3941,7 @@ body:not(.home-page) {
   .product-proof-bridge > .button,
   .readiness-boundary,
   .readiness-details > .button-row { grid-column: 1; }
+  .pricing-plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .section-marker { margin-bottom: 1rem; }
   .sticky-heading { position: static; }
@@ -4029,6 +4148,10 @@ body:not(.home-page) {
   .readiness-list li { border-right: 0; }
   .future-route li { grid-template-columns: 2rem 1fr; }
   .future-route small { grid-column: 2; }
+  .pricing-section-heading { grid-template-columns: 1fr; }
+  .pricing-section-heading .eyebrow { grid-column: 1; }
+  .pricing-plan-grid { grid-template-columns: 1fr; }
+  .pricing-plan-card { min-height: 20rem; }
 
   .preview-hero-grid,
   .preview-entry-heading,

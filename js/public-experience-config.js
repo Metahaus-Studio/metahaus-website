@@ -1,15 +1,22 @@
 /**
  * MetaHaus public experience configuration.
  *
- * Keep the current global Demo gate disabled until demo.metahaus.studio has
- * deployment approval. This single boolean is intentionally retained for
- * backward compatibility, but it is too coarse for future releases: each
- * product experience must receive independent destination and launch approval
- * before the configuration model evolves or public behavior is enabled.
- * This remains the only public-site source for the inactive Demo base URL and
- * product route mapping.
+ * Product destinations are activated independently only after their canonical
+ * HTTPS domain and isolated public profile pass end-to-end verification. The
+ * Gallery demo is product-owner approved, but remains disabled until DNS,
+ * Vercel aliasing and rendered public access are verified.
+ *
+ * The legacy global Demo gate remains disabled and is retained only for the
+ * unlaunched demo.metahaus.studio architecture.
  */
 window.MetaHausPublicExperience = Object.freeze({
+  products: Object.freeze({
+    immersive: Object.freeze({
+      enabled: false,
+      url: "https://immersive.demo.metahaus.studio/",
+      approvalStatus: "approved-pending-dns-and-end-to-end-verification",
+    }),
+  }),
   demo: Object.freeze({
     enabled: false,
     baseUrl: "https://demo.metahaus.studio",

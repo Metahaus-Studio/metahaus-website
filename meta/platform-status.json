@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.5",
+  "schemaVersion": "1.6",
   "lastUpdated": "2026-08-31",
   "publicExperience": {
     "hierarchy": [
@@ -12,7 +12,7 @@
     "demo": {
       "enabled": false,
       "status": "configured-but-disabled-pending-deployment-approval",
-      "activationModel": "global-boolean-retained-for-compatibility; future product experiences require independent destination and launch approval",
+      "activationModel": "independent product destinations with the global boolean retained disabled for compatibility",
       "baseUrl": "https://demo.metahaus.studio",
       "activationSource": "js/public-experience-config.js",
       "routes": {
@@ -22,10 +22,13 @@
         "immersive": "/immersive"
       },
       "immersiveCandidate": {
-        "status": "controlled-demo-candidate-awaiting-launch-approval",
+        "status": "approved-public-demo-pending-dns-and-end-to-end-verification",
         "hostingEvidence": "reachable Vercel deployment verified by cross-repository audit",
-        "approvedPublicDestination": null,
-        "futureCtaLabel": "Enter Gallery Experience"
+        "approvedPublicDestination": "https://immersive.demo.metahaus.studio/",
+        "ctaEnabled": false,
+        "ctaLabel": "Enter Gallery Demo",
+        "standaloneProductAvailability": false,
+        "remainingLaunchGate": "Create the required DNS record, assign the canonical Vercel alias, then verify the isolated Gallery profile end to end."
       },
       "futureParticipationPolicy": "MetaHaus AI and MetaHaus Furniture may receive Demo actions only after a controlled experience and central route are approved."
     },
@@ -42,9 +45,10 @@
       },
       "osPricing": {
         "route": "/os/pricing/",
-        "public": false,
-        "status": "reserved-noindex",
-        "purpose": "Commercial-readiness boundary only; no plans, prices or checkout."
+        "public": true,
+        "indexing": "noindex",
+        "status": "prelaunch-not-purchasable",
+        "purpose": "Proposed pre-launch plan names and pricing with no checkout, subscription activation or entitlement claims."
       },
       "osSignup": {
         "route": "/os/signup/",
@@ -101,7 +105,17 @@
       "productRoute": "/os/",
       "proofRoute": "preview-os.html",
       "demoRoute": "/os",
-      "approvedPublicPricing": null
+      "approvedPublicPricing": null,
+      "proposedPrelaunchPricing": {
+        "status": "proposed-prelaunch-not-purchasable",
+        "plans": [
+          { "name": "MetaHaus OS Core", "monthlyUsd": 249, "annualUsd": 2490 },
+          { "name": "MetaHaus OS Scale", "monthlyUsd": 599, "annualUsd": 5990 },
+          { "name": "MetaHaus OS Business", "monthlyUsd": 1250, "annualUsd": 12500 },
+          { "name": "MetaHaus Enterprise", "pricing": "custom" }
+        ],
+        "entitlements": "pending MetaHaus OS subscription and entitlement tranche"
+      }
     },
     {
       "order": 2,
@@ -112,9 +126,11 @@
       "positioningLine": "Experience the business in space.",
       "proofRoute": "preview-immersive.html",
       "demoRoute": "/immersive",
-      "demoCandidateStatus": "controlled-demo-candidate-awaiting-launch-approval",
-      "approvedPublicDemoUrl": null,
-      "futureExperienceCtaLabel": "Enter Gallery Experience",
+      "demoCandidateStatus": "approved-public-demo-pending-dns-and-end-to-end-verification",
+      "approvedPublicDemoUrl": "https://immersive.demo.metahaus.studio/",
+      "publicDemoCtaEnabled": false,
+      "publicDemoCtaLabel": "Enter Gallery Demo",
+      "standalonePublicAvailability": false,
       "approvedPublicPricing": null
     },
     {
@@ -158,7 +174,9 @@
   ],
   "commercialAvailability": {
     "publicSelfServiceCheckout": false,
-    "publicPricing": false,
+    "publicPricing": true,
+    "publicPricingStatus": "proposed-prelaunch-not-purchasable",
+    "publicPurchasableSubscriptions": false,
     "publicSignup": false,
     "publicAccountProvisioning": false,
     "subscriptionEntitlementEnforcement": false,
@@ -169,7 +187,7 @@
   },
   "commercialLaunchDependencies": {
     "osSubscriptionAndEntitlementArchitecture": "required",
-    "approvedPlansAndPricing": "required",
+    "approvedPlansAndPricing": "proposed pre-launch architecture published; final entitlement mapping and launch approval required",
     "billingAndCancellationTerms": "required",
     "accountAndOrganizationProvisioning": "required",
     "privacyAndDataHandling": "required",

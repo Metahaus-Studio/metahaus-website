@@ -6,7 +6,7 @@ Complete this checklist against a local HTTP preview and again against the produ
 
 - [ ] Product order is OS, Immersive, Cloud, AI, Furniture in both the homepage and `meta/platform-status.json`
 - [ ] MetaHaus OS is described as a shipped authenticated product with `Private Access`; controlled proof is not used as the product’s maturity label
-- [ ] MetaHaus Immersive status confirmed as `Project Access`
+- [ ] MetaHaus Immersive remains `Project Access`; Gallery access is described separately as an approved public demo, not standalone product availability
 - [ ] MetaHaus Cloud and MetaHaus AI statuses confirmed as `In Development`
 - [ ] Evidence-aware context intelligence is identified as shipped inside MetaHaus OS, while standalone provider-backed generative and autonomous MetaHaus AI remains future-facing
 - [ ] MetaHaus Furniture status and project-based commercial wording approved
@@ -15,10 +15,13 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] Post-handover OS access is described as an optional future paid subscription choice
 - [ ] No client is described as automatically becoming a paying subscriber
 - [ ] Direct OS onboarding and subscription sales are not presented as publicly available
-- [ ] No OS price, inactive edition, Cloud tier or future price appears publicly or as purchasable
+- [ ] The only public OS prices are the proposed pre-launch Core `$249/$2,490`, Scale `$599/$5,990`, Business `$1,250/$12,500` and Enterprise `Custom` architecture
+- [ ] Every plan is clearly marked pre-launch and not available to purchase; no Cloud tier or price appears
 - [ ] The OS CTA follows the Studio/contact pathway; there is no checkout
 - [ ] `/os/` clearly distinguishes shipped Private Access capability, controlled public proof and future-facing capability without claiming unshipped public access
-- [ ] `/os/pricing/` publishes no plan names, prices, checkout or entitlement assumptions and remains `noindex`
+- [ ] `/os/pricing/` publishes the proposed plan names and prices, no detailed quotas, checkout or entitlement claims, and remains `noindex`
+- [ ] The comparison matrix reserves workspaces, users, AI, automation, providers, storage, modules/Engine Packs and managed-client workspaces for the OS entitlement tranche
+- [ ] The future Studio-client continuation path is conceptual only and does not implement subscription or workspace mutation
 - [ ] `/os/signup/` contains no signup form, account creation or provisioning behavior and remains `noindex`
 - [ ] `/login/` is the universal existing-approved-access entry and its only authenticated destination is `https://portal.metahaus.studio/`
 - [ ] Access copy refers to people with existing approved access without asserting a broad active public customer cohort
@@ -36,15 +39,18 @@ Complete this checklist against a local HTTP preview and again against the produ
 - [ ] The Cloud preview does not imply runtime activation, installation, assignment, commercial availability or launch readiness
 - [ ] AI and Furniture do not display product previews
 - [ ] Homepage preview links resolve to `preview-os.html`, `preview-immersive.html` and `preview-cloud.html`
-- [ ] Product cards preserve proof and commercial actions; the hidden future Immersive action reads `Enter Gallery Experience`
+- [ ] Product cards distinguish `Explore Immersive Proof` from the independently gated `Enter Gallery Demo` action
 - [ ] Homepage has no standalone Demo explanation or large Product Access section
 - [ ] AI and Furniture render no Demo CTA until an approved central route exists
-- [ ] `js/public-experience-config.js` keeps the global Demo switch disabled; future public experiences require independent product destination and launch approval
+- [ ] `js/public-experience-config.js` keeps the global Demo switch disabled and the independent Immersive destination disabled until canonical-domain verification passes
 - [ ] Disabled Demo configuration renders no live-demo anchors or empty layout placeholders
 - [ ] No public page contains a localhost or `127.0.0.1` link
-- [ ] The global Demo switch is not activated merely because one product receives approval; per-product activation architecture is required first
-- [ ] The reachable Gallery/Vercel experience remains an unlinked controlled-demo candidate awaiting launch approval
-- [ ] No page links to absent `immersive.demo.metahaus.studio` DNS, `vrexhibitions.com`, legacy recovery experiences, legacy Furniture VR or the password-gated Furniture storefront
+- [ ] The global Demo switch is not activated when Gallery launches; only `products.immersive.enabled` may change after approval gates pass
+- [ ] The Gallery canonical destination is `https://immersive.demo.metahaus.studio/` and no active CTA is rendered while DNS or end-to-end verification is incomplete
+- [ ] The Vercel alias targets the latest approved `metahaus-immersive-demo` production deployment
+- [ ] GoDaddy DNS contains `A immersive.demo.metahaus.studio 76.76.21.21`, public DNS resolves and the canonical certificate is valid
+- [ ] The canonical Gallery experience loads to an interactive state without exposing debug/profile selectors, internal experiences, admin surfaces or non-approved content
+- [ ] No page links to a `vercel.app` origin, `vrexhibitions.com`, legacy recovery experiences, legacy Furniture VR or the password-gated Furniture storefront
 - [ ] Every preview destination returns HTTP 200 and its Back to MetaHaus link returns to the correct homepage product context
 - [ ] Preview destinations remain capture-based and do not iframe, expose or link directly to development applications
 - [ ] OS captures retain their natural aspect ratios without meaningful interface cropping; Cloud has no capture in this release
@@ -206,8 +212,8 @@ matchMedia('(prefers-reduced-motion: reduce)').matches
 ## Final source and staged-boundary review
 
 - [ ] `git diff --check` passes
-- [ ] `git diff --cached --name-only` contains only the approved website semantic-alignment tranche
-- [ ] `git diff --cached` contains no CSS, layout, runtime activation, checkout, signup, pricing, provisioning or unsafe destination change
+- [ ] `git diff --cached --name-only` contains only the approved website pre-subscription commercial tranche
+- [ ] `git diff --cached` contains no checkout, Stripe, signup activation, provisioning, entitlement enforcement, active Gallery CTA or unapproved destination
 - [ ] `git status --short` is reviewed before commit
 
 ## Final production smoke test

@@ -15,7 +15,7 @@ The public MetaHaus website is a static-first marketing, storytelling and routin
 ```text
 index.html              Rebuilt public homepage
 os/index.html           Flagship MetaHaus OS product page
-os/pricing/index.html   Noindex pricing-readiness boundary; no plans or prices
+os/pricing/index.html   Noindex pre-launch OS plans and pricing; no checkout
 os/signup/index.html    Noindex signup-readiness boundary; no provisioning
 login/index.html        Universal existing-approved-access bridge to portal.metahaus.studio
 css/styles.css          Tokens, components, responsive rules, motion and legacy compatibility
@@ -50,7 +50,7 @@ Commerce Engine remains a MetaHaus-owned reusable capability. MetaHaus Immersive
 The public maturity order is:
 
 1. MetaHaus OS — `Private Access`; shipped through authenticated access, with controlled public proof
-2. MetaHaus Immersive — `Project Access`
+2. MetaHaus Immersive — `Project Access`; Gallery public-demo access is approved but remains gated until its canonical domain passes end-to-end verification
 3. MetaHaus Cloud — `In Development`
 4. MetaHaus AI — `In Development`; evidence-aware context intelligence is already shipped inside OS, while standalone provider-backed generative and autonomous capabilities remain future-facing
 5. MetaHaus Furniture — `Project Access`, commercial and project-based
@@ -61,7 +61,7 @@ MetaHaus Studio is currently the primary client acquisition and revenue layer. A
 
 The commercial progression is Studio → OS → AI, automation and additional capabilities → broader platform access over time. Reusable operating patterns may become governed capabilities distributed through MetaHaus Cloud. MetaHaus Immersive remains the spatial experience platform.
 
-No OS or Cloud subscription catalogue is approved for public display. Future OS tiers should correspond to actual usage, capabilities, users, workspaces, automation and service level—not company size alone. Do not store unpublished commercial pricing in public website assets.
+The proposed pre-launch MetaHaus OS catalogue is Core at `$249/month` or `$2,490/year`, Scale at `$599/month` or `$5,990/year`, Business at `$1,250/month` or `$12,500/year`, and Enterprise at custom pricing. These plans are not currently purchasable. Exact workspace, user, AI, automation, provider, storage, module/Engine Pack and managed-client workspace entitlements remain owned by the upcoming MetaHaus OS Subscription and Entitlement tranche. Cloud pricing is not approved for public display.
 
 ## Public experience hierarchy
 
@@ -73,7 +73,7 @@ The approved public journey has five distinct layers:
 4. **MetaHaus OS, Cloud and Immersive — Experience it.** Isolated product environments reached through Demo when enabled.
 5. **Work with MetaHaus — Let’s buy/build.** Commercial discovery, proposal and engagement through the Studio contact path.
 
-No global public Demo is approved or enabled. `js/public-experience-config.js` remains the only public-site source for the currently inactive umbrella base URL and route map:
+No global public Demo is approved or enabled. Product destinations now support independent activation after their canonical domain and isolated profile pass end-to-end verification. `js/public-experience-config.js` remains the public-site source for both independently gated destinations and the inactive umbrella route map:
 
 ```js
 demo: {
@@ -85,11 +85,21 @@ demo: {
 
 While disabled, Demo CTAs remain inert `<template>` content and no live-demo anchor, placeholder, localhost URL or dead production URL is rendered. Static product-proof and commercial links remain ordinary HTML navigation.
 
-The existing global boolean is now considered too coarse for launch. Do not change it to `true` merely because one product gains an approved experience. Before any public activation, evolve the configuration so each product destination can be independently approved and enabled, verify that product’s production route, and re-run the complete release checklist.
+Do not change the global boolean to `true` merely because one product gains an approved experience. Enable only the independently approved product entry after its production route passes the complete release checklist.
 
 Homepage product cards own the Proof, Demo and commercial action model. Only products with an approved route and an authored Demo CTA template participate. MetaHaus AI and MetaHaus Furniture intentionally have no Demo route or CTA today; either can join later by adding an approved central route and card action without changing the homepage structure or inventing a URL in advance.
 
-The cross-repository audit found a reachable Vercel deployment for the Gallery proving experience. It is recorded only as a **controlled demo candidate awaiting launch approval**. The website must not link that deployment, the absent `immersive.demo.metahaus.studio` DNS name, `vrexhibitions.com`, legacy recovery experiences, the legacy Furniture VR experience or the password-gated Furniture storefront. The hidden Immersive action is prepared to read **Enter Gallery Experience** after an independently approved destination exists; `Explore Immersive Proof` remains the only public experience-evidence CTA today.
+The Gallery proving experience is approved for **public demo access only**; MetaHaus Immersive is not represented as a generally available standalone public product. The canonical destination is `https://immersive.demo.metahaus.studio/`, backed by the isolated `metahaus-immersive-demo` Vercel project. The CTA remains disabled because the canonical hostname currently has no DNS record and public end-to-end verification cannot yet pass.
+
+The remaining launch sequence is exact:
+
+1. Assign the latest approved production deployment of `metahaus-immersive-demo` to the Vercel alias `immersive.demo.metahaus.studio`.
+2. At the current GoDaddy DNS provider, create `A immersive.demo.metahaus.studio 76.76.21.21` (host/name `immersive.demo`, value `76.76.21.21`; use the provider’s normal/default TTL).
+3. Wait for public DNS and Vercel certificate issuance, then verify HTTPS, the Gallery loading path, assets, navigation and interaction on the canonical hostname.
+4. Confirm that no debug/profile selector, internal experience, admin surface or non-approved content is exposed.
+5. Change only `products.immersive.enabled` to `true` in `js/public-experience-config.js`, then re-run website QA.
+
+Until all five steps pass, `Explore Immersive Proof` remains the only public evidence CTA and the inert future action reads **Enter Gallery Demo**. Do not substitute a `vercel.app` URL, `vrexhibitions.com`, a legacy recovery experience, legacy Furniture VR or the password-gated Furniture storefront.
 
 ## Public product and commercial architecture
 
@@ -107,7 +117,7 @@ The current commercial-route architecture is:
 |---|---|---|
 | `/` | MetaHaus company, ecosystem, products, capabilities, Worlds, selected work and Studio conversion | Public |
 | `/os/` | Flagship MetaHaus OS narrative, shipped capability boundary and Studio-to-OS lifecycle | Public · shipped authenticated Private Access product |
-| `/os/pricing/` | Reserved pricing-readiness boundary | Noindex · no plans, prices or checkout |
+| `/os/pricing/` | Proposed pre-launch OS plan architecture and future continuation concept | Noindex · prices visible · no checkout or activation |
 | `/os/signup/` | Reserved direct-access readiness boundary | Noindex · no account or organization provisioning |
 | `/login/` | Universal existing-approved-access bridge to `https://portal.metahaus.studio/` | Noindex · existing approved access only |
 | `/preview-os.html` | Sanitized evidence of the shipped MetaHaus OS product | Public controlled proof; not the product’s maturity state |
@@ -179,7 +189,7 @@ Opening `index.html` directly is acceptable for a quick content check, but HTTP 
 
 The public site uses **Log in** as the universal access label rather than describing every future user as a Studio client. Public controls route to `/login/`; that page clearly identifies **existing approved access** and links to the established `https://portal.metahaus.studio/` login surface.
 
-This public bridge supports people who already have approved OS access without asserting a broad active public customer cohort or exposing signup, pricing, checkout or provisioning. Preserve the `/login/` public route even after direct subscriptions launch so the public website has one stable access entry and the authenticated application remains owned by the OS architecture.
+This public bridge supports people who already have approved OS access without asserting a broad active public customer cohort or exposing signup, checkout or provisioning. Preserve the `/login/` public route even after direct subscriptions launch so the public website has one stable access entry and the authenticated application remains owned by the OS architecture.
 
 ## Cross-repository follow-up dependencies
 
@@ -232,7 +242,7 @@ They are not linked from the rebuilt homepage or listed in `sitemap.xml`, and ea
 
 The repository does not currently contain approved Privacy, Terms, subscription/billing terms, cancellation, data-handling, provider/subprocessor, security, support or legal-company-identity pages. Do not fabricate these documents or unsupported compliance claims.
 
-Public SaaS pricing, checkout or direct signup must remain disabled until approved source content exists for each applicable trust surface and the MetaHaus OS subscription/entitlement tranche supplies the commercial truth it must describe. Future route candidates are `/privacy/`, `/terms/`, `/subscription-terms/`, `/security/` and `/support/`; create them only from approved legal, operational and security source material.
+Proposed pre-launch OS pricing may be displayed, but checkout, subscription activation and direct signup must remain disabled until approved source content exists for each applicable trust surface and the MetaHaus OS Subscription and Entitlement tranche supplies the exact commercial truth it must enforce. Future route candidates are `/privacy/`, `/terms/`, `/subscription-terms/`, `/security/` and `/support/`; create them only from approved legal, operational and security source material.
 
 ## Branch and deployment model
 
@@ -272,7 +282,7 @@ If a published release must be rolled back:
 ## Next planned phases
 
 1. MetaHaus OS subscription and entitlement architecture
-2. Approved plans, usage dimensions, pricing and continuation rules
+2. Final entitlement values, plan mapping, activation rules and authenticated continuation behavior
 3. Billing, cancellation, privacy, data-handling, security, provider/subprocessor and support source content
 4. Direct account and organization provisioning owned by MetaHaus OS
 5. Dedicated MetaHaus Open Graph artwork
